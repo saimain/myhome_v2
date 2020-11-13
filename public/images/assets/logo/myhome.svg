@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="348.15" height="135.96" viewBox="0 0 1055 412">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #f9921c;
+      }
+
+      .cls-1, .cls-3 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: #29aae1;
+      }
+
+      .cls-4 {
+        font-size: 72px;
+        fill: #333;
+        font-family: "Century Gothic";
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M195,246L406,12,602,228l-46,1L407,60,243,242Z"/>
+  <path class="cls-1" d="M546,152L672,13l71,77V70h40l1,66L885,248l-48-5L672,61,568,176Z"/>
+  <rect class="cls-2" x="374" y="158" width="24" height="24"/>
+  <rect id="Rectangle_1_copy_2" data-name="Rectangle 1 copy 2" class="cls-2" x="374" y="192" width="24" height="24"/>
+  <rect id="Rectangle_1_copy_3" data-name="Rectangle 1 copy 3" class="cls-2" x="414" y="192" width="24" height="24"/>
+  <rect id="Rectangle_1_copy" data-name="Rectangle 1 copy" class="cls-2" x="414" y="158" width="24" height="24"/>
+  <rect id="Rectangle_1_copy_4" data-name="Rectangle 1 copy 4" class="cls-2" x="640" y="154" width="24" height="24"/>
+  <rect id="Rectangle_1_copy_4-2" data-name="Rectangle 1 copy 4" class="cls-2" x="640" y="188" width="24" height="24"/>
+  <rect id="Rectangle_1_copy_4-3" data-name="Rectangle 1 copy 4" class="cls-2" x="680" y="188" width="24" height="24"/>
+  <rect id="Rectangle_1_copy_4-4" data-name="Rectangle 1 copy 4" class="cls-2" x="680" y="154" width="24" height="24"/>
+  <path class="cls-3" d="M36,290s459.329-102.9,984,0C1020.32,289.952,507.457,227.652,36,290Z"/>
+  <text id="My_Home" data-name="My Home" class="cls-4" transform="translate(251.165 379.132) scale(1.612)">My Home</text>
+</svg>
