@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\UserPoint;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
@@ -18,6 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'phone',
         'email',
         'password',
     ];
@@ -40,4 +42,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    // Relations
+
+    public function point()
+    {
+        return $this->hasOne(UserPoint::class);
+    }
+
+    public function order()
+    {
+        return $this->hasOne(PointOrder::class);
+    }
 }

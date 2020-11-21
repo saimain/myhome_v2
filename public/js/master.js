@@ -65,4 +65,22 @@ $(document).ready(function(){
     });
 
 
+    $("#region_select").on('change',function(e){
+        var region_id = e.target.value;
+        var url = '/api/get-townships';
+        $.ajax({
+            url:url,
+            type:"POST",
+            data: {
+                region_id: region_id
+            },
+            success:function (data) {
+                $('#township_select').empty();
+                $.each(data.townships,function(index,township){
+                    $('#township_select').append('<option value="'+township.id+'">'+township.township_name+'</option>');
+                });
+            }
+        });
+    });
+
 });

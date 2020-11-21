@@ -10,8 +10,15 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('admin-template/assets/images/favicon.ico')}}">
 
-    <!-- jquery.vectormap css -->
-    <link href="{{ asset('admin-template/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css')}}"
+    <!-- DataTables -->
+    <link href="{{ asset('admin-template/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}"
+        rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin-template/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css')}}"
+        rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link
+        href="{{ asset('admin-template/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css')}}"
         rel="stylesheet" type="text/css" />
 
     <!-- Bootstrap Css -->
@@ -289,6 +296,7 @@
                                         </li>
 
 
+
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
                                                 role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -300,8 +308,7 @@
                                                 <div class="row">
                                                     <div class="col">
                                                         <div>
-                                                            <a href="pages-register.html"
-                                                                class="dropdown-item">Orders</a>
+
                                                             <a href="{{ url('/dashboard/point-package') }}"
                                                                 class="dropdown-item">Point
                                                                 Packages</a>
@@ -313,7 +320,29 @@
 
                                             </div>
                                         </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Orders <div class="arrow-down"></div>
+                                            </a>
 
+                                            <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div>
+                                                            <a href="{{ url('/dashboard/point-order/all') }}"
+                                                                class="dropdown-item">All Orders</a>
+                                                            <a href="{{ url('/dashboard/point-order/success') }}"
+                                                                class="dropdown-item">Success Orders</a>
+                                                            <a href="{{ url('/dashboard/point-order/pending') }}"
+                                                                class="dropdown-item">Pending Orders</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
                             </nav>
@@ -375,13 +404,16 @@
                                 <a class="dropdown-item" href="#"><i
                                         class="bx bx-lock-open font-size-16 align-middle mr-1"></i> Lock screen</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="#"><i
+                                <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                  document.getElementById('logoutForm').submit();"><i
                                         class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i>
                                     Logout</a>
                             </div>
                         </div>
 
-
+                        <form id="logoutForm" action="{{ url('logout') }}" method="POST">
+                            @csrf
+                        </form>
                     </div>
                 </div>
             </header>
@@ -431,16 +463,19 @@
     <script src="{{ asset('/admin-template/assets/libs/simplebar/simplebar.min.js')}}"></script>
     <script src="{{ asset('/admin-template/assets/libs/node-waves/waves.min.js')}}"></script>
 
-    <!-- apexcharts -->
-    <script src="{{ asset('/admin-template/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
+    <!-- Required datatable js -->
+    <script src="{{ asset('/admin-template/assets/libs/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('/admin-template/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+    <!-- Responsive examples -->
+    <script src="{{ asset('/admin-template/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js')}}">
+    </script>
+    <script
+        src="{{ asset('/admin-template/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js')}}">
+    </script>
 
-    <!-- jquery.vectormap map -->
-    <script
-        src="{{ asset('/admin-template/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js')}}">
-    </script>
-    <script
-        src="{{ asset('/admin-template/assets/libs/admin-resources/jquery.vectormap/maps/jquery-jvectormap-us-merc-en.js')}}">
-    </script>
+    <!-- Datatable init js -->
+    <script src="{{ asset('/admin-template/assets/js/pages/datatables.init.js')}}"></script>
+
 
     <script src="{{ asset('/admin-template/assets/js/pages/dashboard.init.js')}}"></script>
 

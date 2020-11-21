@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use App\Models\Admin;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
@@ -20,6 +21,11 @@ class DatabaseSeeder extends Seeder
         Admin::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
+            'password' => Hash::make('admin123')
+        ]);
+        User::create([
+            'name' => 'User',
+            'email' => 'user@gmail.com',
             'password' => Hash::make('admin123')
         ]);
     }

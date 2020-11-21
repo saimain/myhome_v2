@@ -19,7 +19,7 @@ class CreatePointPackagesTable extends Migration
             $table->string('description')->nullable();
             $table->string('point');
             $table->string('price');
-            $table->string('image_url');
+            $table->string('image');
             $table->timestamps();
         });
     }
