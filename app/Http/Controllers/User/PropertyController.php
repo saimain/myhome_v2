@@ -64,4 +64,12 @@ class PropertyController extends Controller
 
         return 'succes';
     }
+
+    public function viewProperty($id)
+    {
+        $property = Property::find($id);
+        $region = DB::table('regions')->where('id', $property->region_id)->first();
+        $township = DB::table('townships')->where('id', $property->township_id)->first();
+        return view('user.property', compact('property', 'region', 'township'));
+    }
 }

@@ -15,7 +15,10 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/master.css') }}">
 
-    <link type="text/css" rel="stylesheet" href="{{ asset('css/lightslider.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/lightGallery/lightgallery.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/lightGallery/lg-transitions.css') }}" />
+
+    @yield('og-field')
 
 </head>
 
@@ -188,9 +191,16 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
-    <script src="{{ asset('/js/lightslider.js') }}"></script>
+    <!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+    <script src="{{ asset('js/lightGallery/lightgallery.min.js') }}"></script>
+
+    <script src="{{ asset('js/lightslider.js') }}"></script>
     <script src="{{ asset('js/master.js') }}"></script>
     <script src="{{asset('js/image_upload.js')}}"></script>
+
+
 
 </body>
 

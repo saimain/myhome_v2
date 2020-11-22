@@ -8,12 +8,17 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\User\HomeController as UserHomeController;
 
-Route::get('/', [UserHomeController::class, 'index']);
 
 Auth::routes();
 
+Route::get('/', [UserHomeController::class, 'index']);
+
+
 
 // User
+
+Route::get('/property/{id}', [\App\Http\Controllers\User\PropertyController::class, 'viewProperty']);
+
 
 Route::group(['prefix' => 'my', 'middleware' => 'auth:web'], function () {
     Route::get('/', [\App\Http\Controllers\User\DashboardController::class, 'index'])->name('home');

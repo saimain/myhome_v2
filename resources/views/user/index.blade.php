@@ -107,7 +107,7 @@
                             style="height: 200px" alt="...">
                         <div class="card-body">
                             <h6 class="card-title">
-                                <a href="#">
+                                <a href="{{ url('/property/' . $property->id) }}">
                                     {{$property->title}}
                                 </a>
                             </h6>

@@ -166,7 +166,6 @@ return [
          * Package Service Providers...
          */
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
-        Diglactic\Breadcrumbs\Breadcrumb::class,
         /*
          * Application Service Providers...
          */

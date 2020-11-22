@@ -13,6 +13,10 @@ $(document).ready(function(){
 
     // carousel
 
+    $("#lightgallery").lightGallery({
+        thumbnail:true
+    });
+
     $("#lightSlider").lightSlider({
         item: 1,
         autoWidth: false,
