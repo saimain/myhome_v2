@@ -6,7 +6,7 @@
 
 <div class="container mt-3">
 
-    {{ Breadcrumbs::render('point-package' , $package) }}
+    {{ /Config/Breadcrumbs::render('point-package' , $package) }}
 
 
     <div class="row">
