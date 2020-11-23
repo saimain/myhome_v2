@@ -6,7 +6,6 @@
 
 <div class="container mt-3">
 
-    {{ Breadcrumbs::render('upload-property') }}
 
     <div class="row">
         <div class="col-md-3">

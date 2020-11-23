@@ -6,7 +6,6 @@
 
 <div class="container mt-3">
 
-    {{ Breadcrumbs::render('buy-point') }}
 
 
     <div class="row">

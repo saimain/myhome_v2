@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '7b2db4afc9f105d3720836b3729233edb57a579f',
+    'reference' => '92fe0af0326a9fb5418e96554d79a3eb1071fe8b',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -42,15 +42,6 @@
       array (
         0 => '*',
       ),
-    ),
-    'diglactic/laravel-breadcrumbs' => 
-    array (
-      'pretty_version' => 'v6.0.3',
-      'version' => '6.0.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '82991d5dafb02788aebccaf69f6fcb2683b4cee9',
     ),
     'dnoegel/php-xdg-base-dir' => 
     array (
@@ -135,12 +126,12 @@
     ),
     'fakerphp/faker' => 
     array (
-      'pretty_version' => 'v1.11.0',
-      'version' => '1.11.0.0',
+      'pretty_version' => 'v1.12.0',
+      'version' => '1.12.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'f228dc5112bafc14c77d40a2acc0c48058e184b0',
+      'reference' => '9aa6c9e289860951e6b4d010c7a841802d015cd8',
     ),
     'fideloper/proxy' => 
     array (
@@ -463,7 +454,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '7b2db4afc9f105d3720836b3729233edb57a579f',
+      'reference' => '92fe0af0326a9fb5418e96554d79a3eb1071fe8b',
     ),
     'laravel/socialite' => 
     array (

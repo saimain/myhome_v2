@@ -6,8 +6,6 @@
 
 <div class="container mt-3">
 
-    {{ /Config/Breadcrumbs::render('point-package' , $package) }}
-
 
     <div class="row">
         <div class="col-md-3">
