@@ -178,7 +178,45 @@
             @yield('content')
         </div>
 
-
+        {{-- footer --}}
+        <div class="bg-secondary mt-5" style="width: 100%;">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus! Voluptatum sit
+                            aliquam
+                            voluptas voluptatibus odit magni impedit reiciendis est! Distinctio ad et provident, alias
+                            at
+                            placeat quis iure commodi.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus! Voluptatum sit
+                            aliquam
+                            voluptas voluptatibus odit magni impedit reiciendis est! Distinctio ad et provident, alias
+                            at
+                            placeat quis iure commodi.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus! Voluptatum sit
+                            aliquam
+                            voluptas voluptatibus odit magni impedit reiciendis est! Distinctio ad et provident, alias
+                            at
+                            placeat quis iure commodi.
+                        </p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col text-center">
+                        <p class=" text-white">All Right Reserved , Copyright &copy; My Home Myanmar 2020 &reg;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     </div>

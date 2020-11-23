@@ -26,24 +26,28 @@ $first_image = json_decode($property->images)[0];
                 </a>
                 @endforeach
             </div>
-            <hr>
-            <small class="text-muted">Uploaded at {{ $property->created_at->diffForHumans() }}</small>
-            <div class="card mt-3">
-                <div class="card-body">
-                    <div class="d-flex">
-                        <div>
-                            <span class="d-block"><i class="fas fa-map-marked text-primary"></i>
-                                {{ $township->township_name }} |
-                                {{ $region->region_name }}</span>
-                            <span class="d-block mt-2" style="text-transform:capitalize"><i
-                                    class="fas fa-building text-primary"></i>
-                                {{ $property->type }}</span>
-                            <span class="d-block mt-2"><i class="fas fa-bed text-primary"></i> {{ $property->bed_room }}
-                                <i class="fas fa-bath text-primary ml-2"></i>
-                                {{$property->bath_room}}</span>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="mt-3">
+                <p><i class="fas fa-map-marked text-primary"></i>
+                    {{ $township->township_name }} |
+                    {{ $region->region_name }}</p>
+                <p>
+                    <span class="d-block mt-3" style="text-transform:capitalize"><i
+                            class="fas fa-building text-primary"></i>
+                        {{ $property->type }}</span>
+                </p>
+                <p>
+                    <span class="" style="text-transform:capitalize"><i class="fas fa-chart-area text-primary"></i>
+                        {{ $property->area }}</span>
+                </p>
+                <p>
+                    <span class="d-block mt-3"><i class="fas fa-bed text-primary"></i>
+                        {{ $property->bed_room }}
+                        <i class="fas fa-bath text-primary ml-2"></i>
+                        {{$property->bath_room}}</span>
+                </p>
+                <p>Price (Kyats)</p>
+                <h5 class="text-primary">{{ $property->price }} Lkhs</h5>
             </div>
             <div class="mt-3">
                 <p style="line-height: 30px">
@@ -52,12 +56,53 @@ $first_image = json_decode($property->images)[0];
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
+            <div class="d-flex align-items-center">
+                <div class="flex-fill">
+                    <a target="_blank"
+                        href="https://www.facebook.com/sharer/sharer.php?u={{ url('property/' . $property->id) }}&amp;src=sdkpreparse"
+                        class="btn text-white" style="background: #4267B2;"><i class="fab fa-facebook-f"></i>
+                        Share
+                        on
+                        Facebook
+                    </a>
+                </div>
+                <div class="flex-fill">
+                    <a href=" #" class="btn text-white btn-primary w-100"><i class="far fa-save"></i>
+                        Save to Account
+                    </a>
+                </div>
+            </div>
+            <div class="card mt-3 ">
                 <div class="card-body">
-                    <div class="fb-share-button" data-href="{{ url('property/' . $property->id) }}" data-layout="button"
-                        data-size="large"><a target="_blank"
-                            href="https://www.facebook.com/sharer/sharer.php?u={{ url('property/' . $property->id) }}&amp;src=sdkpreparse"
-                            class="fb-xfbml-parse-ignore">Share</a></div>
+                    <small class="text-muted">{{ $property->created_at->diffForHumans() }}
+                        ( {{ date('d-m-Y' , strtotime($property->created_at)) }} )</small>
+                    <br>
+                    <span class="">
+                        <a href="#">
+                            {{ $property->user->name }}
+                        </a>
+                        <br>
+                        <span>
+                            {{ $property->user->email }}
+                        </span>
+                        <br>
+                        <span>
+                            {{ $property->user->phone }}
+                        </span>
+                    </span>
+                    <div class="mt-3 d-flex">
+                        <a href="#" class="flex-fill mr-2 btn btn-primary text-white">Call Phone</a>
+                        <a href="#" class="flex-fill btn btn-primary text-white">Send Message</a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p>Advertisements</p>
+            <div class="row">
+                <div class="col">
+                    <img src="https://via.placeholder.com/450x200" class="card-img-top mb-1" alt="...">
+                    <img src="https://via.placeholder.com/450x200" class="card-img-top mb-1" alt="...">
+                    <img src="https://via.placeholder.com/450x200" class="card-img-top mb-1" alt="...">
                 </div>
             </div>
         </div>

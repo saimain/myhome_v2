@@ -56,4 +56,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(PointOrder::class);
     }
+
+    public function properties()
+    {
+        return $this->hasMany(Property::class);
+    }
 }
