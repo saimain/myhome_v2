@@ -77,227 +77,6 @@
                                 <div class="collapse navbar-collapse" id="topnav-menu-content">
                                     <ul class="navbar-nav">
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle arrow-none" href="#"
-                                                id="topnav-dashboard" role="button" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                Dashboard <div class="arrow-down"></div>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
-                                                <a href="index.html" class="dropdown-item">Dashboard 1</a>
-                                                <a href="index-2.html" class="dropdown-item">Dashboard 2</a>
-                                            </div>
-                                        </li>
-
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle arrow-none" href="#"
-                                                id="topnav-components" role="button" data-toggle="dropdown"
-                                                aria-haspopup="true" aria-expanded="false">
-                                                UI Elements <div class="arrow-down"></div>
-                                            </a>
-
-                                            <div class="dropdown-menu mega-dropdown-menu px-2 dropdown-mega-menu-xl"
-                                                aria-labelledby="topnav-components">
-                                                <div class="row">
-                                                    <div class="col-lg-4">
-                                                        <div>
-                                                            <a href="ui-alerts.html" class="dropdown-item">Alerts</a>
-                                                            <a href="ui-buttons.html" class="dropdown-item">Buttons</a>
-                                                            <a href="ui-cards.html" class="dropdown-item">Cards</a>
-                                                            <a href="ui-carousel.html"
-                                                                class="dropdown-item">Carousel</a>
-                                                            <a href="ui-dropdowns.html"
-                                                                class="dropdown-item">Dropdowns</a>
-                                                            <a href="ui-grid.html" class="dropdown-item">Grid</a>
-                                                            <a href="ui-images.html" class="dropdown-item">Images</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4">
-                                                        <div>
-                                                            <a href="ui-lightbox.html"
-                                                                class="dropdown-item">Lightbox</a>
-                                                            <a href="ui-modals.html" class="dropdown-item">Modals</a>
-                                                            <a href="ui-rangeslider.html" class="dropdown-item">Range
-                                                                Slider</a>
-                                                            <a href="ui-session-timeout.html"
-                                                                class="dropdown-item">Session Timeout</a>
-                                                            <a href="ui-progressbars.html"
-                                                                class="dropdown-item">Progress Bars</a>
-                                                            <a href="ui-sweet-alert.html"
-                                                                class="dropdown-item">Sweet-Alert</a>
-                                                            <a href="ui-tabs-accordions.html" class="dropdown-item">Tabs
-                                                                & Accordions</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4">
-                                                        <div>
-                                                            <a href="ui-typography.html"
-                                                                class="dropdown-item">Typography</a>
-                                                            <a href="ui-video.html" class="dropdown-item">Video</a>
-                                                            <a href="ui-general.html" class="dropdown-item">General</a>
-                                                            <a href="ui-colors.html" class="dropdown-item">Colors</a>
-                                                            <a href="ui-rating.html" class="dropdown-item">Rating</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </li>
-
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Apps <div class="arrow-down"></div>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="topnav-pages">
-
-                                                <a href="calendar.html" class="dropdown-item">Calendar</a>
-                                                <div class="dropdown">
-                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                                        id="topnav-email" role="button" data-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        Email <div class="arrow-down"></div>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="topnav-email">
-                                                        <a href="email-inbox.html" class="dropdown-item">Inbox</a>
-                                                        <a href="email-read.html" class="dropdown-item">Read Email</a>
-                                                    </div>
-                                                </div>
-
-                                                <div class="dropdown">
-                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                                        id="topnav-task" role="button" data-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        Tasks <div class="arrow-down"></div>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="topnav-task">
-                                                        <a href="tasks-list.html" class="dropdown-item">Task List</a>
-                                                        <a href="tasks-kanban.html" class="dropdown-item">Kanban
-                                                            Board</a>
-                                                        <a href="tasks-create.html" class="dropdown-item">Create
-                                                            Task</a>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </li>
-
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-charts"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Components <div class="arrow-down"></div>
-                                            </a>
-                                            <div class="dropdown-menu" aria-labelledby="topnav-charts">
-                                                <div class="dropdown">
-                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                                        id="topnav-form" role="button" data-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        Forms <div class="arrow-down"></div>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="topnav-form">
-                                                        <a href="form-elements.html" class="dropdown-item">Form
-                                                            Elements</a>
-                                                        <a href="form-validation.html" class="dropdown-item">Form
-                                                            Validation</a>
-                                                        <a href="form-advanced.html" class="dropdown-item">Form
-                                                            Advanced</a>
-                                                        <a href="form-editors.html" class="dropdown-item">Form
-                                                            Editors</a>
-                                                        <a href="form-uploads.html" class="dropdown-item">Form File
-                                                            Upload</a>
-                                                        <a href="form-xeditable.html" class="dropdown-item">Form
-                                                            Xeditable</a>
-                                                        <a href="form-repeater.html" class="dropdown-item">Form
-                                                            Repeater</a>
-                                                        <a href="form-wizard.html" class="dropdown-item">Form Wizard</a>
-                                                        <a href="form-mask.html" class="dropdown-item">Form Mask</a>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown">
-                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                                        id="topnav-table" role="button" data-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        Tables <div class="arrow-down"></div>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="topnav-table">
-                                                        <a href="tables-basic.html" class="dropdown-item">Basic
-                                                            Tables</a>
-                                                        <a href="tables-datatable.html" class="dropdown-item">Data
-                                                            Tables</a>
-                                                        <a href="tables-responsive.html"
-                                                            class="dropdown-item">Responsive Table</a>
-                                                        <a href="tables-editable.html" class="dropdown-item">Editable
-                                                            Table</a>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown">
-                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                                        id="topnav-table" role="button" data-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        Charts <div class="arrow-down"></div>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="topnav-table">
-                                                        <a href="charts-apex.html" class="dropdown-item">Apex charts</a>
-                                                        <a href="charts-chartjs.html" class="dropdown-item">Chartjs
-                                                            Chart</a>
-                                                        <a href="charts-flot.html" class="dropdown-item">Flot Chart</a>
-                                                        <a href="charts-knob.html" class="dropdown-item">Jquery Knob
-                                                            Chart</a>
-                                                        <a href="charts-sparkline.html" class="dropdown-item">Sparkline
-                                                            Chart</a>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown">
-                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                                        id="topnav-table" role="button" data-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        Icons <div class="arrow-down"></div>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="topnav-table">
-                                                        <a href="icons-boxicons.html" class="dropdown-item">Boxicons</a>
-                                                        <a href="icons-materialdesign.html"
-                                                            class="dropdown-item">Material Design</a>
-                                                        <a href="icons-dripicons.html"
-                                                            class="dropdown-item">Dripicons</a>
-                                                        <a href="icons-fontawesome.html" class="dropdown-item">Font
-                                                            awesome</a>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown">
-                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                                        id="topnav-map" role="button" data-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        Maps <div class="arrow-down"></div>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="topnav-map">
-                                                        <a href="maps-google.html" class="dropdown-item">Google Maps</a>
-                                                        <a href="maps-vector.html" class="dropdown-item">Vector Maps</a>
-                                                    </div>
-                                                </div>
-
-                                                <div class="dropdown">
-                                                    <a class="dropdown-item dropdown-toggle arrow-none" href="#"
-                                                        id="topnav-layouts" role="button" data-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        Layouts <div class="arrow-down"></div>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="topnav-layouts">
-                                                        <a href="layouts-vertical.html"
-                                                            class="dropdown-item">Vertical</a>
-                                                        <a href="layouts-preloader.html"
-                                                            class="dropdown-item">Preloader</a>
-                                                        <a href="layouts-boxed.html" class="dropdown-item">Boxed</a>
-                                                        <a href="layouts-topbar-light.html" class="dropdown-item">Topbar
-                                                            Light</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-
-
-
-                                        <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
                                                 role="button" data-toggle="dropdown" aria-haspopup="true"
                                                 aria-expanded="false">
@@ -337,6 +116,29 @@
                                                                 class="dropdown-item">Success Orders</a>
                                                             <a href="{{ url('/dashboard/point-order/pending') }}"
                                                                 class="dropdown-item">Pending Orders</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Advertisements <div class="arrow-down"></div>
+                                            </a>
+
+                                            <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div>
+
+                                                            <a href="{{ url('/dashboard/advertisements') }}"
+                                                                class="dropdown-item">Advertisements</a>
+                                                            <a href="{{ url('/dashboard/advertisements/add') }}"
+                                                                class="dropdown-item">Add New Advertisement</a>
                                                         </div>
                                                     </div>
                                                 </div>

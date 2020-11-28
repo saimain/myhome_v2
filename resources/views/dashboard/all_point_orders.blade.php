@@ -103,9 +103,16 @@
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Close</button>
                                         @if (!$order->is_success)
-                                        <button type="button" class="btn btn-primary">Transfer Order</button>
+                                        <button type="submit" form="transferOrderForm{{ $order->id }}"
+                                            class="btn btn-primary">Transfer Order</button>
                                         @endif
                                     </div>
+                                    <form action="{{ url('dashboard/point-order/transfer') }}"
+                                        id="transferOrderForm{{ $order->id }}" method="POST">
+                                        @csrf
+                                        <input type="text" hidden value="{{ $order->id }}" name="order_id">
+                                        <input type="text" hidden value="{{ $order->user->id }}" name="user_id">
+                                    </form>
                                 </div>
                             </div>
                         </div>

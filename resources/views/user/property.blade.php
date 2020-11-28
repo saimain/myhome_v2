@@ -98,13 +98,7 @@ $first_image = json_decode($property->images)[0];
             </div>
             <hr>
             <p>Advertisements</p>
-            <div class="row">
-                <div class="col">
-                    <img src="https://via.placeholder.com/450x200" class="card-img-top mb-1" alt="...">
-                    <img src="https://via.placeholder.com/450x200" class="card-img-top mb-1" alt="...">
-                    <img src="https://via.placeholder.com/450x200" class="card-img-top mb-1" alt="...">
-                </div>
-            </div>
+            @include('user.advertises')
         </div>
     </div>
 </div>

@@ -63,6 +63,14 @@ Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/point-order/all', [\App\Http\Controllers\Admin\PointOrderController::class, 'allOrder']);
         Route::get('/point-order/success', [\App\Http\Controllers\Admin\PointOrderController::class, 'successOrder']);
         Route::get('/point-order/pending', [\App\Http\Controllers\Admin\PointOrderController::class, 'pendingOrder']);
+
+        Route::post('/point-order/transfer', [\App\Http\Controllers\Admin\PointOrderController::class, 'transferOrder']);
+
+        // Advertisements
+
+        Route::get('/advertisements', [\App\Http\Controllers\Admin\AdvertisementController::class, 'index']);
+        Route::get('/advertisements/add', [\App\Http\Controllers\Admin\AdvertisementController::class, 'addAdsForm']);
+        Route::post('/advertisements/add', [\App\Http\Controllers\Admin\AdvertisementController::class, 'addAds'])->name('addNewAds');
     });
 });
 
