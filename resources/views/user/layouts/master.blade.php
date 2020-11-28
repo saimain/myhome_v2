@@ -160,9 +160,11 @@
 
     <div id="content">
         <nav class="d-md-none navbar navbar-expand-lg navbar-light bg-light">
-            <div class="d-flex justify-content-between w-100">
+            <div class="d-flex justify-content-between w-100 align-items-center">
                 <div>
-                    <a class="navbar-brand" href="#">Navbar</a>
+                    <a class="navbar-brand" href="#">
+                        <img src="{{ asset('images/assets/logo/myhome.svg') }}" width="100" alt="">
+                    </a>
                 </div>
                 <div>
                     <button type="button" id="sidebarCollapse" class="btn mr-auto">
