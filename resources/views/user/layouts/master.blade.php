@@ -124,102 +124,119 @@
         {{-- Mobile Sidebar --}}
         <div class="wrapper d-md-none">
             <nav id="sidebar">
-                {{-- <div class="sidebar-header">
-                    <img src="{{ asset('images/assets/logo/myhome.svg') }}" class="w-50" alt="">
-        </div> --}}
-        <ul class="list-unstyled components">
-            <p>The providers</p>
-            <li class="">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                <ul class="list-unstyled mt-3">
+                    <li class="">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">Home</a>
 
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Home 1</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#">Home 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Home 2</a>
+                            </li>
+                        </ul>
                     </li>
+                    <li><a href="#">About</a></li>
                     <li>
-                        <a href="#">Home 2</a>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">Pages</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="#">Page 1</a></li>
+                            <li><a href="#">Page 2</a></li>
+                        </ul>
                     </li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Policy</a></li>
                 </ul>
-            </li>
-            <li><a href="#">About</a></li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li><a href="#">Page 1</a></li>
-                    <li><a href="#">Page 2</a></li>
+                @auth
+                <form id="logoutForm" action="{{ url('logout') }}" method="POST">
+                    @csrf
+                </form>
+                <hr>
+                <ul class="list-unstyled">
+                    <li><a href="{{ url('/my') }}">Dashboard</a></li>
+                    <li><a href="{{ url('/my/account') }}">My Account</a></li>
+                    <li><a href="{{ url('/my/saved') }}">Saved Posts</a></li>
+                    <li><a href="{{ url('/my/inbox') }}">Message Inbox</a></li>
+                    <li><a href="{{ url('/my/buy-point') }}">Buy Points</a></li>
+                    <li><a href="{{ url('/my/upload-property') }}">Upload Property</a></li>
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logoutForm').submit();">Logout</a></li>
                 </ul>
-            </li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Policy</a></li>
-        </ul>
-        </nav>
+                @endauth
+            </nav>
 
 
 
-    </div>
-
-    <div id="content">
-        <nav class="d-md-none navbar navbar-expand-lg navbar-light bg-light">
-            <div class="d-flex justify-content-between w-100 align-items-center">
-                <div>
-                    <a class="navbar-brand" href="#">
-                        <img src="{{ asset('images/assets/logo/myhome.svg') }}" width="100" alt="">
-                    </a>
-                </div>
-                <div>
-                    <button type="button" id="sidebarCollapse" class="btn mr-auto">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-
-        </nav>
-
-        {{-- content --}}
-        <div class="">
-            @yield('content')
         </div>
 
-        {{-- footer --}}
-        <div class="bg-secondary mt-5" style="width: 100%;">
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-md-4">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus! Voluptatum sit
-                            aliquam
-                            voluptas voluptatibus odit magni impedit reiciendis est! Distinctio ad et provident, alias
-                            at
-                            placeat quis iure commodi.
-                        </p>
+        <div id="content">
+            <nav class="d-md-none navbar navbar-expand-lg navbar-light bg-light ">
+                <div class="d-flex justify-content-between w-100 align-items-center">
+                    <div>
+                        <a class="navbar-brand" href="#">
+                            <img src="{{ asset('images/assets/logo/myhome.svg') }}" width="100" alt="">
+                        </a>
                     </div>
-                    <div class="col-md-4">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus! Voluptatum sit
-                            aliquam
-                            voluptas voluptatibus odit magni impedit reiciendis est! Distinctio ad et provident, alias
-                            at
-                            placeat quis iure commodi.
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus! Voluptatum sit
-                            aliquam
-                            voluptas voluptatibus odit magni impedit reiciendis est! Distinctio ad et provident, alias
-                            at
-                            placeat quis iure commodi.
-                        </p>
+                    <div>
+                        <button type="button" id="sidebarCollapse" class="btn mr-auto">
+                            <i class="fas fa-bars"></i>
+                        </button>
                     </div>
                 </div>
-                <div class="row mt-5">
-                    <div class="col text-center">
-                        <p class=" text-white">All Right Reserved , Copyright &copy; My Home Myanmar 2020 &reg;</p>
+
+            </nav>
+
+            {{-- content --}}
+            <div class="">
+                @yield('content')
+            </div>
+
+            {{-- footer --}}
+            <div class="bg-secondary mt-5" style="width: 100%;">
+                <div class="container py-5">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus! Voluptatum sit
+                                aliquam
+                                voluptas voluptatibus odit magni impedit reiciendis est! Distinctio ad et provident,
+                                alias
+                                at
+                                placeat quis iure commodi.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus! Voluptatum sit
+                                aliquam
+                                voluptas voluptatibus odit magni impedit reiciendis est! Distinctio ad et provident,
+                                alias
+                                at
+                                placeat quis iure commodi.
+                            </p>
+                        </div>
+                        <div class="col-md-4">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus! Voluptatum sit
+                                aliquam
+                                voluptas voluptatibus odit magni impedit reiciendis est! Distinctio ad et provident,
+                                alias
+                                at
+                                placeat quis iure commodi.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col text-center">
+                            <p class=" text-white">All Right Reserved , Copyright &copy; My Home Myanmar 2020 &reg;</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
     </div>
 

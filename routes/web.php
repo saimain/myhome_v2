@@ -37,6 +37,11 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth:web'], function () {
     Route::post('/upload-property', [\App\Http\Controllers\User\PropertyController::class, 'postUploadProperty']);
 
 
+    // Inbox Message
+
+    Route::get('/inbox', [\App\Http\Controllers\User\MessageController::class, 'index']);
+    Route::get('/inbox/{user_id}', [\App\Http\Controllers\User\MessageController::class, 'viewMessge']);
+
     // Other
 });
 

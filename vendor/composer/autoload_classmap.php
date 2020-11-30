@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\Admin\\AdvertisementController' => $baseDir . '/app/Http/Controllers/Admin/AdvertisementController.php',
     'App\\Http\\Controllers\\Admin\\DashboardController' => $baseDir . '/app/Http/Controllers/Admin/DashboardController.php',
     'App\\Http\\Controllers\\Admin\\PointOrderController' => $baseDir . '/app/Http/Controllers/Admin/PointOrderController.php',
     'App\\Http\\Controllers\\Admin\\PointPackageController' => $baseDir . '/app/Http/Controllers/Admin/PointPackageController.php',
@@ -36,6 +37,7 @@ return array(
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Models\\Admin' => $baseDir . '/app/Models/Admin.php',
     'App\\Models\\Advertise' => $baseDir . '/app/Models/Advertise.php',
+    'App\\Models\\Message' => $baseDir . '/app/Models/Message.php',
     'App\\Models\\PointOrder' => $baseDir . '/app/Models/PointOrder.php',
     'App\\Models\\PointPackage' => $baseDir . '/app/Models/PointPackage.php',
     'App\\Models\\Property' => $baseDir . '/app/Models/Property.php',

@@ -10,7 +10,9 @@
 
     <div class="row">
         <div class="col-md-3">
-            @include('user.dashboard.layouts.navbar')
+            <div class="d-none d-md-block">
+                @include('user.dashboard.layouts.navbar')
+            </div>
         </div>
 
         <div class="col-md-9">

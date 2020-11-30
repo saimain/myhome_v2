@@ -5,7 +5,9 @@
 
 
 <div class="container mt-3">
-    @include('user.dashboard.layouts.navbar')
+    <div class="">
+        @include('user.dashboard.layouts.navbar')
+    </div>
 </div>
 
 @endsection

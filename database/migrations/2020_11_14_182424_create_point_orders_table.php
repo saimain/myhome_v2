@@ -23,8 +23,8 @@ class CreatePointOrdersTable extends Migration
             $table->boolean('is_success')->default(false);
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
-            $table->foreign('point_package_id')->references('id')->on('point_packages')->onDelete('cascade');;
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('point_package_id')->references('id')->on('point_packages')->onDelete('cascade');
         });
     }
 

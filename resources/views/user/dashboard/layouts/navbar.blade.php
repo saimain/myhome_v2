@@ -19,6 +19,9 @@
     <a href="{{ url('my/saved') }}" class="list-group-item list-group-item-action">
         <i class="fas fa-angle-right"></i> Saved Posts
     </a>
+    <a href="{{ url('my/inbox') }}" class="list-group-item list-group-item-action">
+        <i class="fas fa-angle-right"></i> Message Inbox <span class="badge badge-danger">New</span>
+    </a>
     <a href="{{ url('my/buy-point') }}" class="list-group-item list-group-item-action"><i
             class="fas fa-angle-right"></i> Buy
         Points</a>
