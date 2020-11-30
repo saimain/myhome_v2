@@ -149,6 +149,9 @@
                     </li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">Policy</a></li>
+                    @auth
+
+                    @else
                     <hr>
                     <li>
                         <div class="px-2">
@@ -159,6 +162,7 @@
                     <li class=""><a href="{{ url('/register') }}" class="text-center"><small>Register New
                                 Account</small></a>
                     </li>
+                    @endauth
                 </ul>
                 @auth
                 <form id="logoutForm" action="{{ url('logout') }}" method="POST">
