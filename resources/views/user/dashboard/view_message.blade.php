@@ -17,7 +17,7 @@
             <div class="messages_div">
                 @php
                 $message = $messages->first();
-                $user = DB::table('users')->where('id',$message->from_id)->first();
+                $user = DB::table('users')->where('id',request()->user_id)->first();
                 @endphp
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="h5">
