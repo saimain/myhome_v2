@@ -11,7 +11,7 @@ class MessageController extends Controller
 {
     public function index()
     {
-        $recent_messages = Message::where('from_id', Auth::id())->orWhere('to_id', Auth::id())->get();
+        $recent_messages = Message::where('from_id', Auth::id())->orWhere('to_id', Auth::id())->orderBy('created_at', 'desc')->get();
         return view('user.dashboard.inbox_message', compact('recent_messages'));
     }
 

@@ -20,8 +20,7 @@
                 $user = DB::table('users')->where('id',$recent_message->from_id)->first();
                 @endphp
                 <a href="{{ url('my/inbox/' . $recent_message->to_id) }}"
-                    class="list-group-item list-group-item-action">{{ $user->name }} -
-                    {{ $recent_message->message }}</a>
+                    class="list-group-item list-group-item-action">{{ $user->name }}</a>
                 @endforeach
             </div>
         </div>

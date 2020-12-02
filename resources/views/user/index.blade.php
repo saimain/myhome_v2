@@ -25,9 +25,7 @@
                             style="height: 200px" alt="...">
                         <div class="card-body">
                             <h6 class="card-title">
-                                <a href="#">
-                                    {{$property->title}}
-                                </a>
+                                <a href="{{ url('/property/' . $property->id) }}">
                             </h6>
                             <span><small>{{$township->township_name}} | {{$region->region_name}}</small></span>
                             <span class="text-primary d-block mb-2">{{$property->price}} Lakh (Kyats)</span>
@@ -93,9 +91,7 @@
                             style="height: 200px" alt="...">
                         <div class="card-body">
                             <h6 class="card-title">
-                                <a href="#">
-                                    {{$property->title}}
-                                </a>
+                                {{$property->title}}
                             </h6>
                             <span><small>{{$township->township_name}} | {{$region->region_name}}</small></span>
                             <span class="text-primary d-block mb-2">{{$property->price}} Lakh (Kyats)</span>
@@ -123,8 +119,6 @@
                             style="height: 200px" alt="...">
                         <div class="card-body">
                             <h6 class="card-title">
-                                <a href="#">
-                                    {{$property->title}}
                                 </a>
                             </h6>
                             <span><small>{{$township->township_name}} | {{$region->region_name}}</small></span>

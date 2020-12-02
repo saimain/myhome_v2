@@ -17,7 +17,7 @@
             <div class="messages_div">
                 @php
                 $message = $messages->first();
-                $user = DB::table('users')->where('id',$message->to_id)->first();
+                $user = DB::table('users')->where('id',$message->from_id)->first();
                 @endphp
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="h5">
@@ -34,7 +34,7 @@
                     $from_user = DB::table('users')->where('id',$message->from_id)->first();
                     $to_user = DB::table('users')->where('id',$message->to_id)->first();
                     @endphp
-                    <li style="list-style: none;" class="py-3 px-2 rounded
+                    <li style="list-style: none;" class="py-3 px-2 rounded mt-2
                     @if ($message->from_id == Auth::id())
                      bg-success text-white
                     @endif">

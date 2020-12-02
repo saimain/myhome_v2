@@ -42,6 +42,12 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth:web'], function () {
     Route::get('/inbox', [\App\Http\Controllers\User\MessageController::class, 'index']);
     Route::get('/inbox/{user_id}', [\App\Http\Controllers\User\MessageController::class, 'viewMessge']);
 
+
+    // Save
+
+    Route::get('/saved', [\App\Http\Controllers\User\SavePropertyController::class, 'viewSaved']);
+    Route::post('/save/{id}', [\App\Http\Controllers\User\SavePropertyController::class, 'saveProperty']);
+
     // Other
 });
 

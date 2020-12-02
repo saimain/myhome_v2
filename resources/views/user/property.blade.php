@@ -66,10 +66,21 @@ $first_image = json_decode($property->images)[0];
                         Facebook
                     </a>
                 </div>
+                @php
+                $saved =
+                DB::table('save_properties')->where('user_id',Auth::id())->where('property_id',$property->id)->first();
+                @endphp
+                <form action="{{ url('/my/save/' . $property->id ) }}" method="POST"
+                    id="saveProperty{{ $property->id }}">
+                    @csrf
+                </form>
                 <div class="flex-fill">
-                    <a href=" #" class="btn text-white btn-primary w-100"><i class="far fa-save"></i>
-                        Save to Account
-                    </a>
+                    <button class="btn text-white btn-primary w-100" type="submit"
+                        form="saveProperty{{ $property->id }}" @if ($saved) disabled @endif>
+                        <i class="far fa-save"></i>
+                        @if ($saved) Saved to Account @else Save to Account @endif
+
+                    </button>
                 </div>
             </div>
             <div class="card mt-3 ">
@@ -92,7 +103,8 @@ $first_image = json_decode($property->images)[0];
                     </span>
                     <div class="mt-3 d-flex">
                         <a href="#" class="flex-fill mr-2 btn btn-primary text-white">Call Phone</a>
-                        <a href="#" class="flex-fill btn btn-primary text-white">Send Message</a>
+                        <a href="{{ url('/my/inbox/' . $property->user->id) }}"
+                            class="flex-fill btn btn-primary text-white">Send Message</a>
                     </div>
                 </div>
             </div>
