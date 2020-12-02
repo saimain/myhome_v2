@@ -124,30 +124,12 @@
         <div class="wrapper d-md-none">
             <nav id="sidebar">
                 <ul class="list-unstyled mt-3">
-                    <li class="">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Home</a>
-
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
-                                <a href="#">Home 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Home 2</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#">About</a></li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li><a href="#">Page 1</a></li>
-                            <li><a href="#">Page 2</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Policy</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="#">For Sale</a></li>
+                    <li><a href="#">For Rent</a></li>
+                    <li><a href="#">Properties</a></li>
+                    <li><a href="#">Agents</a></li>
+                    <li><a href="#">Construction</a></li>
                     @auth
 
                     @else
@@ -189,7 +171,7 @@
             <nav class="d-md-none navbar navbar-expand-lg navbar-light bg-light ">
                 <div class="d-flex justify-content-between w-100 align-items-center">
                     <div>
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="{{ url('/') }}">
                             <img src="{{ asset('images/assets/logo/myhome.svg') }}" width="100" alt="">
                         </a>
                     </div>
