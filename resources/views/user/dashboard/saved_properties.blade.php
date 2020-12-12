@@ -6,14 +6,6 @@
 
 <div class="container mt-3">
 
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Library</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Data</li>
-        </ol>
-    </nav>
-
 
     <div class="row">
         <div class="col-md-3">
@@ -23,6 +15,7 @@
         </div>
 
         <div class="col-md-9">
+            @if ($saved_properties->count() > 0)
             <div class="row row-cols-1 row-cols-md-3">
                 @foreach ($saved_properties as $saved_property)
                 @php
@@ -53,6 +46,11 @@
                 @endforeach
 
             </div>
+            @else
+            <p>
+                No saved property.
+            </p>
+            @endif
         </div>
     </div>
 

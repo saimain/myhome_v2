@@ -20,6 +20,13 @@ class CreateUsersTable extends Migration
             $table->string('phone')->uniqid()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('is_agent')->default(false);
+            $table->string('agent_name')->nullable();
+            $table->string('agent_type')->nullable();
+            $table->string('agent_profile')->nullable();
+            $table->string('agent_phone')->nullable();
+            $table->text('agent_address')->nullable();
+            $table->text('agent_about')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

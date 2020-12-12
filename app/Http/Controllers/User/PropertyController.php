@@ -32,6 +32,12 @@ class PropertyController extends Controller
             'images' => 'required',
         ]);
 
+        if (Auth::user()->is_agent == true) {
+            $as_agent = 1;
+        } else {
+            $as_agent = 0;
+        }
+
 
         $new_property = new Property();
         $new_property->user_id = Auth::id();
@@ -45,6 +51,7 @@ class PropertyController extends Controller
         $new_property->bath_room = $request->bath_room;
         $new_property->description = $request->description;
         $new_property->phone = $request->phone;
+        $new_property->as_agent = $as_agent;
         $new_property->sale_rent = $request->sale_rent;
 
         $images_arr = array();
@@ -62,7 +69,7 @@ class PropertyController extends Controller
         $new_property->images = $images;
         $new_property->save();
 
-        return 'succes';
+        return back();
     }
 
     public function viewProperty($id)

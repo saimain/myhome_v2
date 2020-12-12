@@ -96,7 +96,7 @@
                 <div class="form-group row">
                     <label for="" class="col-sm-2 col-form-label">Price (Lkhs)</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="" name="price">
+                        <input type="text" class="form-control" id="" name="price">
                     </div>
                 </div>
                 <div class="form-group row">

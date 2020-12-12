@@ -26,6 +26,10 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth:web'], function () {
     // Account
     Route::get('/account', [\App\Http\Controllers\User\AccountController::class, 'index'])->name('account');
 
+    // Agent
+
+    Route::get('/account/agent', [\App\Http\Controllers\User\AccountController::class, 'upgradeAgentForm']);
+    Route::post('/account/agent', [\App\Http\Controllers\User\AccountController::class, 'upgradeAgent']);
 
     // Buy Point
     Route::get('/buy-point', [\App\Http\Controllers\User\PointController::class, 'buyPoint'])->name('buy-point');
@@ -41,6 +45,7 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth:web'], function () {
 
     Route::get('/inbox', [\App\Http\Controllers\User\MessageController::class, 'index']);
     Route::get('/inbox/{user_id}', [\App\Http\Controllers\User\MessageController::class, 'viewMessge']);
+    Route::post('/inbox/{user_id}', [\App\Http\Controllers\User\MessageController::class, 'sendMessage']);
 
 
     // Save

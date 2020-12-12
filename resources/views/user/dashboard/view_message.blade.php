@@ -14,6 +14,7 @@
         </div>
 
         <div class="col-md-9">
+
             <div class="messages_div">
                 @php
                 $message = $messages->first();
@@ -21,11 +22,61 @@
                 @endphp
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="h5">
+                        @if ($user->is_agent == true)
+                        {{ $user->agent_name }} <span class="text-success"><small>(Agent)</small></span>
+                        @else
                         {{ $user->name }}
+                        @endif
                     </span>
-                    <a href="#" class="text-success">
+                    <button type="button" class="btn btn-primary btn-sm text-white" data-toggle="modal"
+                        data-target="#aboutModal">
                         <i class="fas fa-info-circle"></i> About
-                    </a>
+                    </button>
+                    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Account Detail</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="text-center">
+                                        <h5>
+                                            @if ($user->is_agent == true)
+                                            {{ $user->agent_name }} <span
+                                                class="text-success"><small>(Agent)</small></span>
+                                            @else
+                                            {{ $user->name }}
+                                            @endif
+                                        </h5>
+                                        <p class="mt-2">
+                                            @if ($user->is_agent == true)
+                                            {{ $user->agent_phone }}
+                                            @else
+                                            {{ $user->phone }}
+                                            @endif
+                                        </p>
+                                        <p>
+                                            {{ $user->email }}
+                                        </p>
+                                        <p>
+                                            @if ($user->is_agent == true)
+                                            {{ $user->agent_address }}
+                                            @endif
+                                        </p>
+                                        <p>
+                                            @if ($user->is_agent == true)
+                                            {{ $user->agent_about }}
+                                            @endif
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <hr>
                 <ul class="list-group list-group-flush">
@@ -49,11 +100,19 @@
                 </ul>
             </div>
             <div class="inbox_div mt-3">
-                <form action="">
-                    <input type="text" name="" class="form-control" id="">
+                <form action="{{ url('my/inbox/' . request()->user_id) }}" method="POST">
+                    @csrf
+                    <input type="text" name="message" class="form-control" id="">
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary text-white mt-2">Send</button>
+                    </div>
                 </form>
             </div>
+
+
         </div>
+
+
     </div>
 
 </div>
