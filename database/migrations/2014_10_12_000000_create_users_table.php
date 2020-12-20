@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('phone')->uniqid()->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->boolean('is_agent')->default(false);
             $table->string('agent_name')->nullable();
             $table->string('agent_type')->nullable();
@@ -27,8 +27,8 @@ class CreateUsersTable extends Migration
             $table->string('agent_phone')->nullable();
             $table->text('agent_address')->nullable();
             $table->text('agent_about')->nullable();
-            $table->string('provider');
-            $table->string('provider_id');
+            $table->string('provider')->nullable();
+            $table->string('provider_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
