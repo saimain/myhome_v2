@@ -37,7 +37,8 @@
                         <span class="nav-link">Follow us:</span>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fab fa-facebook"></i></a>
+                        <a class="nav-link" href="https://www.facebook.com/myhomemyanmar1/" target="_blank"><i
+                                class="fab fa-facebook"></i></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
@@ -88,21 +89,16 @@
                             <a class="nav-link" href="{{url('/')}}"><i class="fas fa-home"></i> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="far fa-file-alt"></i> For Sale</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                <i class="far fa-file-alt"></i> For Rent <i class="fas fa-angle-down"></i>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
+                            <a class="nav-link" href="{{ url('/sale/properties') }}"><i class="far fa-file-alt"></i> For
+                                Sale</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-building"></i> Properties</a>
+                            <a class="nav-link" href="{{ url('/rent/properties') }}"><i class="far fa-file-alt"></i> For
+                                Rent</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('properties') }}"><i class="fas fa-building"></i>
+                                Properties</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-user-friends"></i> Agents</a>
@@ -111,7 +107,7 @@
                             <a class="nav-link" href="#"><i class="fas fa-users-cog"></i> Construction</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-search"></i> Search</a>
+                            <a class="nav-link" href="{{ url('search') }}"><i class="fas fa-search"></i> Search</a>
                         </li>
                     </ul>
                 </div>
@@ -191,37 +187,39 @@
 
             {{-- footer --}}
             <div class="bg-secondary mt-5" style="width: 100%;">
-                <div class="container py-5">
+                <div class="container py-5 text-white">
                     <div class="row">
                         <div class="col-md-4">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus! Voluptatum sit
-                                aliquam
-                                voluptas voluptatibus odit magni impedit reiciendis est! Distinctio ad et provident,
-                                alias
-                                at
-                                placeat quis iure commodi.
-                            </p>
+                            <ul style="list-style: none" class="px-0">
+                                <li><a href="#">Contact Us</a></li>
+                                <div class="mt-3"></div>
+                                <li><a href="#">What is MyHome MM</a></li>
+                                <div class="mt-3"></div>
+                                <li><a href="#">Regions in Myanmar</a></li>
+                                <div class="mt-3"></div>
+                                <li><a href="#">Terms of services</a></li>
+                                <div class="mt-3"></div>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
                         </div>
                         <div class="col-md-4">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus! Voluptatum sit
-                                aliquam
-                                voluptas voluptatibus odit magni impedit reiciendis est! Distinctio ad et provident,
-                                alias
-                                at
-                                placeat quis iure commodi.
-                            </p>
+                            <ul style="list-style: none" class="px-0">
+                                <li><a href="#">Contact Us</a></li>
+                                <div class="mt-3"></div>
+                                <li><a href="#">What is MyHome MM</a></li>
+                                <div class="mt-3"></div>
+                                <li><a href="#">Regions in Myanmar</a></li>
+                                <div class="mt-3"></div>
+                                <li><a href="#">Terms of services</a></li>
+                                <div class="mt-3"></div>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
                         </div>
                         <div class="col-md-4">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, natus! Voluptatum sit
-                                aliquam
-                                voluptas voluptatibus odit magni impedit reiciendis est! Distinctio ad et provident,
-                                alias
-                                at
-                                placeat quis iure commodi.
-                            </p>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217646.76398263453!2d95.9735022828026!3d16.915893949412617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1ecc7a5fae025%3A0xefaaaf158bb12780!2sKyaik%20Ka%20San%20Rd%2C%20Yangon!5e0!3m2!1sen!2smm!4v1608400446579!5m2!1sen!2smm"
+                                width="" height="200" frameborder="0" style="border:0;" allowfullscreen=""
+                                aria-hidden="false" tabindex="0"></iframe>
                         </div>
                     </div>
                     <div class="row mt-5">

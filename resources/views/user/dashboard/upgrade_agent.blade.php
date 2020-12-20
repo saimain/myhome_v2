@@ -31,7 +31,7 @@
                         <select class="form-control" name="agent_type" id="">
                             <option selected disabled>Select agent type</option>
                             <option value="Property">Property Agent</option>
-                            <option value="Individuat">Individual Agent</option>
+                            <option value="Individual">Individual Agent</option>
                         </select>
                     </div>
                 </div>

@@ -17,7 +17,9 @@ $first_image = json_decode($property->images)[0];
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-8">
-            <h5>{{ $property->title }}</h5>
+            <h5>{{ $property->title }} @if($property->user->id == Auth::id()) <span
+                    class="badge badge-primary text-white ml-2">Post by You</span> @endif
+            </h5>
             <hr>
             <div id="lightgallery">
                 @foreach (json_decode($property->images) as $image)
@@ -53,6 +55,31 @@ $first_image = json_decode($property->images)[0];
                 <p style="line-height: 30px">
                     {{ $property->description }}
                 </p>
+            </div>
+            <hr>
+            <p>
+                <small>Comments</small>
+            </p>
+            <form action="{{ route('addComment' , $property->id) }}" method="POST">
+                @csrf
+                <textarea name="text" id="" cols="30" rows="3" class="form-control"></textarea>
+                <div class="text-right mt-3">
+                    <button type="submit" class="btn btn-primary text-white">Comment</button>
+                </div>
+            </form>
+            <div class="mt-3">
+                <ul class="list-group">
+                    @foreach ($property->comment->sortByDesc('created_at') as $comment)
+                    <li class="list-group-item border-0 p-0">
+                        <div>
+                            <small>
+                                {{ $comment->user->name }} : {{ $comment->created_at->diffForHumans() }}
+                            </small>
+                            <p>{{ $comment->text }}</p>
+                        </div>
+                    </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
         <div class="col-md-4">
@@ -102,9 +129,16 @@ $first_image = json_decode($property->images)[0];
                         </span>
                     </span>
                     <div class="mt-3 d-flex">
-                        <a href="#" class="flex-fill mr-2 btn btn-primary text-white">Call Phone</a>
+                        @if($property->user->id == Auth::id())
+                        <div class="alert alert-primary w-100" role="alert">
+                            Posted by You
+                        </div>
+                        @else
+                        <a href="#" class="flex-fill mr-2 btn btn-primary text-white">Call
+                            Phone</a>
                         <a href="{{ url('/my/inbox/' . $property->user->id) }}"
                             class="flex-fill btn btn-primary text-white">Send Message</a>
+                        @endif
                     </div>
                 </div>
             </div>

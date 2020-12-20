@@ -42,4 +42,12 @@ class PointOrderController extends Controller
 
         return back();
     }
+
+    public function cancelOrder($id)
+    {
+        $order = PointOrder::find($id);
+        unlink(public_path('/storage/point_order/' . $order->image));
+        $order->delete();
+        return back();
+    }
 }

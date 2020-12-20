@@ -68,7 +68,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <a href="#" class="text-primary"><u>Look for more properties >></u></a>
+                    <a href="{{ url('/sale/properties') }}" class="text-primary"><u>Look for more properties >></u></a>
                 </div>
             </div>
 
@@ -150,14 +150,5 @@
     </div>
 </div>
 
-<div class="container-fluid mt-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron">
-
-            </div>
-        </div>
-    </div>
-</div>
 
 @endsection

@@ -76,6 +76,31 @@
 
                                 <div class="collapse navbar-collapse" id="topnav-menu-content">
                                     <ul class="navbar-nav">
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Property <div class="arrow-down"></div>
+                                            </a>
+                                            <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div>
+                                                            <a href="{{ url('/dashboard/property') }}"
+                                                                class="dropdown-item">View All Properties</a>
+                                                            <a href="{{ url('/dashboard/property/featured') }}"
+                                                                class="dropdown-item">Featured Properties</a>
+                                                            <a href="{{ url('/dashboard/property/agent') }}"
+                                                                class="dropdown-item">Agent Properties</a>
+                                                            <a href="{{ url('/dashboard/property/user') }}"
+                                                                class="dropdown-item">User Properties</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </li>
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
                                                 role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -139,6 +164,27 @@
                                                                 class="dropdown-item">Advertisements</a>
                                                             <a href="{{ url('/dashboard/advertisements/add') }}"
                                                                 class="dropdown-item">Add New Advertisement</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                User & Agent <div class="arrow-down"></div>
+                                            </a>
+                                            <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div>
+                                                            <a href="{{ url('/dashboard/users') }}"
+                                                                class="dropdown-item">View Users</a>
+                                                            <a href="{{ url('/dashboard/agents') }}"
+                                                                class="dropdown-item">View Agents</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -282,6 +328,12 @@
     <script src="{{ asset('/admin-template/assets/js/pages/dashboard.init.js')}}"></script>
 
     <script src="{{ asset('/admin-template/assets/js/app.js')}}"></script>
+
+    <script>
+        $(document).ready(function(){
+
+        });
+    </script>
 
 </body>
 

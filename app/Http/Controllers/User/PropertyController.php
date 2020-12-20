@@ -10,6 +10,26 @@ use Illuminate\Support\Facades\Auth;
 
 class PropertyController extends Controller
 {
+
+    public function viewProperties()
+    {
+        $properties = Property::orderBy('created_at', 'DESC')->paginate(6);
+        return view('user.properties', compact('properties'));
+    }
+
+    public function viewSaleProperties()
+    {
+        $properties = Property::where('sale_rent', 'sale')->orderBy('created_at', 'DESC')->paginate(6);
+        return view('user.for_sale_properties', compact('properties'));
+    }
+
+    public function viewRentProperties()
+    {
+        $properties = Property::where('sale_rent', 'rent')->orderBy('created_at', 'DESC')->paginate(6);
+        return view('user.for_rent_properties', compact('properties'));
+    }
+
+
     public function uploadProperty()
     {
         $regions = DB::table('regions')->get();

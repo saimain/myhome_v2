@@ -11,7 +11,8 @@ class AdvertisementController extends Controller
 {
     public function index()
     {
-        return view('dashboard.advertisement');
+        $advertises = Advertise::all();
+        return view('dashboard.advertisement', compact('advertises'));
     }
 
     public function addAdsForm()
@@ -45,5 +46,14 @@ class AdvertisementController extends Controller
 
             return back();
         }
+    }
+
+    public function deleteAdvertise($id)
+    {
+        $ads = Advertise::find($id);
+        $path = public_path('/storage/advertise/');
+        unlink($path . $ads->image);
+        $ads->delete();
+        return back();
     }
 }

@@ -18,14 +18,17 @@ class MessageController extends Controller
 
     public function viewMessge($user_id)
     {
-        $messages = Message::where('to_id', $user_id)->orWhere('from_id', $user_id)->get();
-        $my_messages = Message::where('to_id', Auth::id())->get();
-        foreach ($my_messages as $my_message) {
-            $my_message->is_read = 1;
-            $my_message->update();
+        if ($user_id == Auth::id()) {
+            return back();
+        } else {
+            $messages = Message::where('to_id', $user_id)->orWhere('from_id', $user_id)->get();
+            $my_messages = Message::where('to_id', Auth::id())->get();
+            foreach ($my_messages as $my_message) {
+                $my_message->is_read = 1;
+                $my_message->update();
+            }
+            return view('user.dashboard.view_message', compact('messages'));
         }
-
-        return view('user.dashboard.view_message', compact('messages'));
     }
 
     public function sendMessage($user_id, Request $request)

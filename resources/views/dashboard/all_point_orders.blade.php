@@ -5,12 +5,12 @@
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
-            <h4 class="page-title mb-0 font-size-18">Orders</h4>
+            <h4 class="page-title mb-0 font-size-18">All Point Orders</h4>
 
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Points</a></li>
-                    <li class="breadcrumb-item active">Orders</li>
+                    <li class="breadcrumb-item active">All Point Orders</li>
                 </ol>
             </div>
 
@@ -103,6 +103,14 @@
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">Close</button>
                                         @if (!$order->is_success)
+                                        <form id="deleteOrder{{ $order->id }}"
+                                            action="{{ url('dashboard/point-order/cencel/' . $order->id) }}"
+                                            method="POST">
+                                            @csrf
+                                        </form>
+                                        <button type="submit" form="deleteOrder{{ $order->id }}" class="btn btn-danger">
+                                            Cancel Order
+                                        </button>
                                         <button type="submit" form="transferOrderForm{{ $order->id }}"
                                             class="btn btn-primary">Transfer Order</button>
                                         @endif
