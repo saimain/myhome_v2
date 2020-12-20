@@ -27,6 +27,8 @@ class CreateUsersTable extends Migration
             $table->string('agent_phone')->nullable();
             $table->text('agent_address')->nullable();
             $table->text('agent_about')->nullable();
+            $table->string('provider');
+            $table->string('provider_id');
             $table->rememberToken();
             $table->timestamps();
         });

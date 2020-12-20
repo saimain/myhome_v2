@@ -17,6 +17,9 @@ Route::get('/rent/properties', [\App\Http\Controllers\User\PropertyController::c
 Route::get('/search', [\App\Http\Controllers\User\SearchController::class, 'searchProperty']);
 Route::post('/search', [\App\Http\Controllers\User\SearchController::class, 'searchPropertyPost'])->name('searchProperty');
 
+Route::get('/auth/redirect/{provider}', [\App\Http\Controllers\User\SocialController::class, 'redirect']);
+Route::get('/callback/{provider}', [\App\Http\Controllers\User\SocialController::class, 'callback']);
+
 // User
 
 Route::get('/properties', [\App\Http\Controllers\User\PropertyController::class, 'viewProperties']);

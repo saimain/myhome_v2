@@ -12,9 +12,9 @@ class SearchController extends Controller
     public function searchProperty(Request $request)
     {
         if ($request) {
-            print_r($request);
+            $data = json_encode($request->all());
+            return $data->name;
         }
-        return view('user.search_property');
     }
 
     public function searchPropertyPost(Request $request)

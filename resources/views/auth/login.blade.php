@@ -60,6 +60,7 @@
                         </div>
                     </div>
                 </form>
+                <a href="{{ url('/auth/redirect/facebook') }}">Login with Facebook</a>
         </div>
     </div>
 </div>
