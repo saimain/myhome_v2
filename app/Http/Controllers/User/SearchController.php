@@ -13,7 +13,6 @@ class SearchController extends Controller
     {
         if (count($request->all())) {
             $data = $request->all();
-            print_r($request->all());
             $properties = Property::where('title', 'like', '%' . $data[0]['name'])
                 ->orWhere('region_id', $data[1]['region_id'])
                 ->orWhere('township_id', $data[2]['township_id'])
