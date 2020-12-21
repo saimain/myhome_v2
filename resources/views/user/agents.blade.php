@@ -6,37 +6,26 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-8">
-            <p><i class="fas fa-building"></i> Properties</p>
+            <p><i class="fas fa-user-friends"></i> Agents</p>
             <div class="row row-cols-1 row-cols-md-3">
-                @foreach ($properties as $property)
-                @php
-                $region = DB::table('regions')->where('id',$property->region_id)->first();
-                $township = DB::table('townships')->where('region_id',$property->region_id)->first();
-                @endphp
+                @foreach ($agents as $agent)
                 <div class="col mb-4">
                     <div class="card">
-                        @php
-                        $image = json_decode($property->images)[0];
-                        @endphp
-                        <img src="{{ asset('storage/property_image/' . $image) }}" class="card-img-top"
+                        <img src="{{ asset('storage/agent_profile/' . $agent->agent_profile) }}" class="card-img-top"
                             style="height: 200px" alt="...">
                         <div class="card-body">
                             <h6 class="card-title">
-                                <a href="{{ url('/property/' . $property->id) }}">
-                                    {{$property->title}}
+                                <a href="{{ url('/agent/' . $agent->agent_name) }}">
+                                    {{$agent->agent_name}}
                                 </a>
                             </h6>
-                            <span><small>{{$township->township_name}} | {{$region->region_name}}</small></span>
-                            <span class="text-primary d-block mb-2">{{$property->price}} Lakh (Kyats)</span>
-                            <span class="mr-2"><i class="fas fa-bed"></i> {{$property->bed_room}}</span>
-                            <span><i class="fas fa-bath"></i> {{$property->bath_room}}</span>
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
             <div>
-                {{ $properties->links() }}
+                {{ $agents->links() }}
             </div>
         </div>
         <div class="col-md-4">
@@ -52,5 +41,7 @@
         </div>
     </div>
 </div>
+
+
 
 @endsection

@@ -53,14 +53,5 @@
     </div>
 </div>
 
-<div class="container-fluid mt-5">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="jumbotron">
-
-            </div>
-        </div>
-    </div>
-</div>
 
 @endsection

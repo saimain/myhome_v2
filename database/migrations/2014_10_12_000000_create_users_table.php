@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
             $table->boolean('is_agent')->default(false);
-            $table->string('agent_name')->nullable();
+            $table->string('agent_name')->unique()->nullable();
             $table->string('agent_type')->nullable();
             $table->string('agent_profile')->nullable();
             $table->string('agent_phone')->nullable();

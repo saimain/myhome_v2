@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'ef126fa39fe7963ed1e6fcec721fb0ca1dc6701a',
+    'reference' => '842df7a372b1c8fc2cd31f277edde1cb6dbef83a',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -19,6 +19,15 @@
       array (
       ),
       'reference' => '8d8f88b3b3830916be94292c1fbce84433efb1aa',
+    ),
+    'biscolab/laravel-recaptcha' => 
+    array (
+      'pretty_version' => '5.0.0',
+      'version' => '5.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '586c4f8e599472b2920a51de998cc79d8803b5f5',
     ),
     'brick/math' => 
     array (
@@ -454,7 +463,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'ef126fa39fe7963ed1e6fcec721fb0ca1dc6701a',
+      'reference' => '842df7a372b1c8fc2cd31f277edde1cb6dbef83a',
     ),
     'laravel/socialite' => 
     array (

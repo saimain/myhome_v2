@@ -35,6 +35,7 @@ class ComposerStaticInit258f36545cfb7a7b18adb54d1886d148
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        '5f2edeb18ca19ebd9ee6da72dc9f4292' => __DIR__ . '/..' . '/biscolab/laravel-recaptcha/src/helpers.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '6b34c85f7b1ad6faa15aa12109e030f2' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/functions.php',
     );
@@ -180,6 +181,7 @@ class ComposerStaticInit258f36545cfb7a7b18adb54d1886d148
         'B' => 
         array (
             'Brick\\Math\\' => 11,
+            'Biscolab\\ReCaptcha\\' => 19,
         ),
         'A' => 
         array (
@@ -516,6 +518,10 @@ class ComposerStaticInit258f36545cfb7a7b18adb54d1886d148
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'Biscolab\\ReCaptcha\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/biscolab/laravel-recaptcha/src',
+        ),
         'Asm89\\Stack\\' => 
         array (
             0 => __DIR__ . '/..' . '/asm89/stack-cors/src',
@@ -554,16 +560,24 @@ class ComposerStaticInit258f36545cfb7a7b18adb54d1886d148
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\User\\AboutController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/AboutController.php',
         'App\\Http\\Controllers\\User\\AccountController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/AccountController.php',
+        'App\\Http\\Controllers\\User\\AgentController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/AgentController.php',
         'App\\Http\\Controllers\\User\\CommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/CommentController.php',
+        'App\\Http\\Controllers\\User\\ConstructionController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/ConstructionController.php',
+        'App\\Http\\Controllers\\User\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/ContactController.php',
         'App\\Http\\Controllers\\User\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/DashboardController.php',
         'App\\Http\\Controllers\\User\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/HomeController.php',
         'App\\Http\\Controllers\\User\\MessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/MessageController.php',
         'App\\Http\\Controllers\\User\\PointController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/PointController.php',
         'App\\Http\\Controllers\\User\\PointOrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/PointOrderController.php',
+        'App\\Http\\Controllers\\User\\PrivacyController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/PrivacyController.php',
         'App\\Http\\Controllers\\User\\PropertyController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/PropertyController.php',
         'App\\Http\\Controllers\\User\\SavePropertyController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/SavePropertyController.php',
         'App\\Http\\Controllers\\User\\SearchController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/SearchController.php',
+        'App\\Http\\Controllers\\User\\SocialController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/SocialController.php',
+        'App\\Http\\Controllers\\User\\TermController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/TermController.php',
+        'App\\Http\\Controllers\\User\\UserGuideController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/UserGuideController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -576,6 +590,7 @@ class ComposerStaticInit258f36545cfb7a7b18adb54d1886d148
         'App\\Models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\Models\\Advertise' => __DIR__ . '/../..' . '/app/Models/Advertise.php',
         'App\\Models\\Comment' => __DIR__ . '/../..' . '/app/Models/Comment.php',
+        'App\\Models\\Contact' => __DIR__ . '/../..' . '/app/Models/Contact.php',
         'App\\Models\\Message' => __DIR__ . '/../..' . '/app/Models/Message.php',
         'App\\Models\\PointOrder' => __DIR__ . '/../..' . '/app/Models/PointOrder.php',
         'App\\Models\\PointPackage' => __DIR__ . '/../..' . '/app/Models/PointPackage.php',
@@ -591,6 +606,14 @@ class ComposerStaticInit258f36545cfb7a7b18adb54d1886d148
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'Biscolab\\ReCaptcha\\Controllers\\ReCaptchaController' => __DIR__ . '/..' . '/biscolab/laravel-recaptcha/src/Controllers/ReCaptchaController.php',
+        'Biscolab\\ReCaptcha\\Exceptions\\InvalidConfigurationException' => __DIR__ . '/..' . '/biscolab/laravel-recaptcha/src/Exceptions/InvalidConfigurationException.php',
+        'Biscolab\\ReCaptcha\\Facades\\ReCaptcha' => __DIR__ . '/..' . '/biscolab/laravel-recaptcha/src/Facades/ReCaptcha.php',
+        'Biscolab\\ReCaptcha\\ReCaptchaBuilder' => __DIR__ . '/..' . '/biscolab/laravel-recaptcha/src/ReCaptchaBuilder.php',
+        'Biscolab\\ReCaptcha\\ReCaptchaBuilderInvisible' => __DIR__ . '/..' . '/biscolab/laravel-recaptcha/src/ReCaptchaBuilderInvisible.php',
+        'Biscolab\\ReCaptcha\\ReCaptchaBuilderV2' => __DIR__ . '/..' . '/biscolab/laravel-recaptcha/src/ReCaptchaBuilderV2.php',
+        'Biscolab\\ReCaptcha\\ReCaptchaBuilderV3' => __DIR__ . '/..' . '/biscolab/laravel-recaptcha/src/ReCaptchaBuilderV3.php',
+        'Biscolab\\ReCaptcha\\ReCaptchaServiceProvider' => __DIR__ . '/..' . '/biscolab/laravel-recaptcha/src/ReCaptchaServiceProvider.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
         'Brick\\Math\\BigNumber' => __DIR__ . '/..' . '/brick/math/src/BigNumber.php',

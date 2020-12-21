@@ -3,11 +3,31 @@
 @section('content')
 
 
-<div class="container mt-3">
-    <div class="row">
+<div class="container">
+    <div class="row mt-3">
         <div class="col-md-8">
-            <p><i class="fas fa-building"></i> Properties</p>
+            <p><i class="fas fa-user-friends"></i> Agent Account</p>
+            <div class="card border-0 mb-3 w-100" style="">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{ asset('storage/agent_profile/' . $agent->agent_profile) }}" class="card-img"
+                            alt="agent profile">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $agent->agent_name }}</h5>
+                            <p class="text-dark card-text">{{ $agent->agent_about }}</p>
+                            <p class="text-dark card-text">{{ $agent->agent_phone }}</p>
+                            <p class="text-dark card-text">{{ $agent->agent_address }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="row row-cols-1 row-cols-md-3">
+                @php
+                $properties =
+                DB::table('properties')->where('user_id',$agent->id)->orderBy('created_at','DESC')->get();
+                @endphp
                 @foreach ($properties as $property)
                 @php
                 $region = DB::table('regions')->where('id',$property->region_id)->first();
@@ -35,9 +55,6 @@
                 </div>
                 @endforeach
             </div>
-            <div>
-                {{ $properties->links() }}
-            </div>
         </div>
         <div class="col-md-4">
             <div class="fb-page" data-href="https://web.facebook.com/myhomemyanmar1" data-tabs="" data-width=""
@@ -51,6 +68,7 @@
             @include('user.advertises')
         </div>
     </div>
+
 </div>
 
 @endsection

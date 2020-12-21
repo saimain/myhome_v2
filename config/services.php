@@ -35,4 +35,9 @@ return [
         'client_secret' => '1446b1d2b5b8cb5e70b2a74b54a16548',
         'redirect' => 'https://demo.myhomemm.com/callback/facebook',
     ],
+
+    'recaptcha' => [
+        'key' => env('GOOGLE_RECAPTCHA_KEY'),
+        'secret' => env('GOOGLE_RECAPTCHA_SECRET'),
+    ],
 ];

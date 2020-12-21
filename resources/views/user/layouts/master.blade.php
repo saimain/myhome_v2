@@ -17,6 +17,7 @@
     <link type="text/css" rel="stylesheet" href="{{ asset('css/lightGallery/lightgallery.css') }}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('css/lightGallery/lg-transitions.css') }}" />
 
+
     @yield('og-field')
 
 </head>
@@ -51,7 +52,8 @@
             <div>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fas fa-phone-alt mr-2"></i> Contact</a>
+                        <a class="nav-link" href="{{ url('/contact') }}"><i class="fas fa-phone-alt mr-2"></i>
+                            Contact</a>
                     </li>
                     @auth
                     <li class="nav-item bg-primary ml-3">
@@ -101,11 +103,13 @@
                                 Properties</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-user-friends"></i> Agents</a>
+                            <a class="nav-link" href="{{ url('agents') }}"><i class="fas fa-user-friends"></i>
+                                Agents</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-users-cog"></i> Construction</a>
-                        </li>
+                        {{-- <li class="nav-item">
+                            <a class="nav-link" href="{{ url('construction') }}"><i class="fas fa-users-cog"></i>
+                        Construction</a>
+                        </li> --}}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('search') }}"><i class="fas fa-search"></i> Search</a>
                         </li>
@@ -191,28 +195,29 @@
                     <div class="row">
                         <div class="col-md-4">
                             <ul style="list-style: none" class="px-0">
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="{{ url('/contact') }}">Contact Us</a></li>
                                 <div class="mt-3"></div>
-                                <li><a href="#">What is MyHome MM</a></li>
+                                <li><a href="{{ url('/about') }}">What is MyHome MM</a></li>
                                 <div class="mt-3"></div>
                                 <li><a href="#">Regions in Myanmar</a></li>
                                 <div class="mt-3"></div>
-                                <li><a href="#">Terms of services</a></li>
+                                <li><a href="{{ url('term-of-service') }}">Terms of services</a></li>
                                 <div class="mt-3"></div>
-                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="{{ url('privacy-policy') }}">Privacy Policy</a></li>
                             </ul>
                         </div>
                         <div class="col-md-4">
                             <ul style="list-style: none" class="px-0">
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="{{ url('guide') }}">User Guide</a></li>
                                 <div class="mt-3"></div>
-                                <li><a href="#">What is MyHome MM</a></li>
-                                <div class="mt-3"></div>
-                                <li><a href="#">Regions in Myanmar</a></li>
-                                <div class="mt-3"></div>
-                                <li><a href="#">Terms of services</a></li>
-                                <div class="mt-3"></div>
-                                <li><a href="#">Privacy Policy</a></li>
+                                <hr>
+                                <li>
+                                    <form action="#">
+                                        <label for="">Get Email for New Property</label>
+                                        <input type="email" placeholder="Email Address" class="form-control">
+                                        <button class="btn mt-2 btn-primary text-white">Submit</button>
+                                    </form>
+                                </li>
                             </ul>
                         </div>
                         <div class="col-md-4">

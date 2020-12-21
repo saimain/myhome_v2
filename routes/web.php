@@ -12,6 +12,7 @@ use App\Http\Controllers\User\HomeController as UserHomeController;
 Auth::routes();
 
 Route::get('/', [UserHomeController::class, 'index']);
+
 Route::get('/sale/properties', [\App\Http\Controllers\User\PropertyController::class, 'viewSaleProperties']);
 Route::get('/rent/properties', [\App\Http\Controllers\User\PropertyController::class, 'viewRentProperties']);
 Route::get('/search', [\App\Http\Controllers\User\SearchController::class, 'searchProperty']);
@@ -19,6 +20,19 @@ Route::post('/search', [\App\Http\Controllers\User\SearchController::class, 'sea
 
 Route::get('/auth/redirect/{provider}', [\App\Http\Controllers\User\SocialController::class, 'redirect']);
 Route::get('/callback/{provider}', [\App\Http\Controllers\User\SocialController::class, 'callback']);
+
+
+Route::get('/agents', [\App\Http\Controllers\User\AgentController::class, 'viewAgent']);
+Route::get('/agent/{name}', [\App\Http\Controllers\User\AgentController::class, 'viewAgentDetail']);
+
+Route::get('/construction', [\App\Http\Controllers\User\ConstructionController::class, 'viewConstructs']);
+
+Route::get('/about', [\App\Http\Controllers\User\AboutController::class, 'viewAbout']);
+Route::get('/contact', [\App\Http\Controllers\User\ContactController::class, 'viewContact']);
+Route::post('/contact', [\App\Http\Controllers\User\ContactController::class, 'sendContact']);
+Route::get('/privacy-policy', [\App\Http\Controllers\User\PrivacyController::class, 'viewPrivacy']);
+Route::get('/term-of-service', [\App\Http\Controllers\User\TermController::class, 'viewTerm']);
+Route::get('/guide', [\App\Http\Controllers\User\UserGuideController::class, 'viewGuide']);
 
 // User
 

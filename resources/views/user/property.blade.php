@@ -134,7 +134,7 @@ $first_image = json_decode($property->images)[0];
                             Posted by You
                         </div>
                         @else
-                        <a href="#" class="flex-fill mr-2 btn btn-primary text-white">Call
+                        <a href="tel: {{ $property->phone }}" class="flex-fill mr-2 btn btn-primary text-white">Call
                             Phone</a>
                         <a href="{{ url('/my/inbox/' . $property->user->id) }}"
                             class="flex-fill btn btn-primary text-white">Send Message</a>
