@@ -5,7 +5,16 @@
 {{-- Search Div --}}
 @include('user.search')
 
-<div class="container">
+{{-- <div class="bg-secondary text-white py-3 mb-3">
+    <div class="container text-center">
+        <a href="{{ url('/my') }}" class="btn btn-primary text-white text-uppercase font-weight-bold"><i
+    class="fas fa-building"></i> Post
+your
+Property</a>
+</div>
+</div> --}}
+
+<div class="container mt-5">
     <div class="row">
         <div class="col-md-8">
             @if ($boosted_sale_properties->count() > 0)
@@ -45,7 +54,7 @@
                 $township = DB::table('townships')->where('region_id',$property->region_id)->first();
                 @endphp
                 <div class="col mb-4">
-                    <div class="card">
+                    <div class="card h-100">
                         @php
                         $image = json_decode($property->images)[0];
                         @endphp
@@ -54,7 +63,7 @@
                         <div class="card-body">
                             <h6 class="card-title">
                                 <a href="{{ url('/property/' . $property->id) }}">
-                                    {{$property->title}}
+                                    {{ Str::limit($property->title, 50) }}
                                 </a>
                             </h6>
                             <span><small>{{$township->township_name}} | {{$region->region_name}}</small></span>
@@ -83,7 +92,7 @@
                 $township = DB::table('townships')->where('region_id',$property->region_id)->first();
                 @endphp
                 <div class="col mb-4">
-                    <div class="card">
+                    <div class="card h-100">
                         @php
                         $image = json_decode($property->images)[0];
                         @endphp
@@ -91,7 +100,9 @@
                             style="height: 200px" alt="...">
                         <div class="card-body">
                             <h6 class="card-title">
-                                {{$property->title}}
+                                <a href="{{ url('/property/' . $property->id) }}">
+                                    {{ Str::limit($property->title, 50) }}
+                                </a>
                             </h6>
                             <span><small>{{$township->township_name}} | {{$region->region_name}}</small></span>
                             <span class="text-primary d-block mb-2">{{$property->price}} Lakh (Kyats)</span>
@@ -111,7 +122,7 @@
                 $township = DB::table('townships')->where('region_id',$property->region_id)->first();
                 @endphp
                 <div class="col mb-4">
-                    <div class="card">
+                    <div class="card h-100">
                         @php
                         $image = json_decode($property->images)[0];
                         @endphp
@@ -119,6 +130,8 @@
                             style="height: 200px" alt="...">
                         <div class="card-body">
                             <h6 class="card-title">
+                                <a href="{{ url('/property/' . $property->id) }}">
+                                    {{ Str::limit($property->title, 50) }}
                                 </a>
                             </h6>
                             <span><small>{{$township->township_name}} | {{$region->region_name}}</small></span>

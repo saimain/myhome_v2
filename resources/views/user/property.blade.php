@@ -52,9 +52,9 @@ $first_image = json_decode($property->images)[0];
                 <h5 class="text-primary">{{ $property->price }} Lkhs</h5>
             </div>
             <div class="mt-3">
-                <p style="line-height: 30px">
-                    {{ $property->description }}
-                </p>
+                @php
+                echo nl2br($property->description);
+                @endphp
             </div>
             <hr>
             <p>
@@ -128,16 +128,43 @@ $first_image = json_decode($property->images)[0];
                             {{ $property->user->phone }}
                         </span>
                     </span>
-                    <div class="mt-3 d-flex">
+                    <div class="mt-3">
                         @if($property->user->id == Auth::id())
-                        <div class="alert alert-primary w-100" role="alert">
-                            Posted by You
+                        @if ($property->is_boosted == true)
+                        <div class="alert alert-success w-100" role="alert">
+                            Featured until {{ date('d M Y' , strtotime($property->boost_exp_date)) }}.
                         </div>
                         @else
-                        <a href="tel: {{ $property->phone }}" class="flex-fill mr-2 btn btn-primary text-white">Call
-                            Phone</a>
-                        <a href="{{ url('/my/inbox/' . $property->user->id) }}"
-                            class="flex-fill btn btn-primary text-white">Send Message</a>
+                        <div class="alert alert-primary w-100" role="alert">
+                            Featured this post for 1 month with 10 points.Your left
+                            <b>{{ Auth::user()->point->points }}</b>
+                            Points in your account.
+                        </div>
+                        @endif
+                        <hr>
+                        <div class="d-flex">
+                            <form action="{{ route('property.delete' , $property->id) }}" method="POST"
+                                id="deletePropertyForm"> @csrf</form>
+                            <button type="submit" form="deletePropertyForm"
+                                class="flex-fill btn btn-danger text-white mr-2">Delete</button>
+                            <a href="{{ url('/my/edit/property/' . $property->id) }}"
+                                class="flex-fill btn btn-primary text-white mr-2">Edit</a>
+                            @if ($property->is_boosted == false)
+                            <form id="boostProperty{{ $property->id }}"
+                                action="{{ url('/my/boost/property/' . $property->id) }}" method="POST">
+                                @csrf
+                            </form>
+                            <button type="submit" form="boostProperty{{ $property->id }}"
+                                class="flex-fill btn btn-success text-white">Boost this Post</button>
+                            @endif
+                        </div>
+                        @else
+                        <div class="d-flex">
+                            <a href="tel: {{ $property->phone }}" class="flex-fill mr-2 btn btn-primary text-white">Call
+                                Phone</a>
+                            <a href="{{ url('/my/inbox/' . $property->user->id) }}"
+                                class="flex-fill btn btn-primary text-white">Send Message</a>
+                        </div>
                         @endif
                     </div>
                 </div>

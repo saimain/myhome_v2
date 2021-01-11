@@ -10,6 +10,8 @@ class UserPoint extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['user_id', 'points'];
+
     // Relations
 
     public function user()

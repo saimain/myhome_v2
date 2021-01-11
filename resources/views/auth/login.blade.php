@@ -60,7 +60,11 @@
                         </div>
                     </div>
                 </form>
-                <a href="{{ url('/auth/redirect/facebook') }}">Login with Facebook</a>
+                <div class="text-center mt-4">
+                    <a href="{{ url('/auth/redirect/facebook') }}" style="background: #4267B2"
+                        class="btn font-weight-bold text-white">Login
+                        with Facebook</a>
+                </div>
         </div>
     </div>
 </div>

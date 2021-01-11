@@ -47,6 +47,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fab fa-youtube"></i></a>
                     </li>
+                    <li class="nav-item bg-primary ml-3">
+                        <a class="nav-link text-white" href="{{ url('my/upload-property') }}">Post Property For Free</a>
+                    </li>
                 </ul>
             </div>
             <div>
@@ -75,16 +78,18 @@
     <div class="">
         <div class="d-none d-md-block mt-5 py-5">
             <div class="container">
-                <div class="logo-header">
-                    <img src="{{ asset('images/assets/logo/myhome.svg') }}" width="150" alt="">
-                </div>
+                <a href="{{ url('/') }}">
+                    <div class="logo-header">
+                        <img src="{{ asset('images/assets/logo/myhome.svg') }}" width="150" alt="">
+                    </div>
+                </a>
             </div>
         </div>
 
 
         {{-- Desktop & Table Navbar --}}
         <div class="d-none d-md-block">
-            <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
                 <div class="container">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">

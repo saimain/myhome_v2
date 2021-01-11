@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\User;
 
+use Carbon\Carbon;
+use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\Property;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PropertyController extends Controller
 {
@@ -98,5 +100,55 @@ class PropertyController extends Controller
         $region = DB::table('regions')->where('id', $property->region_id)->first();
         $township = DB::table('townships')->where('id', $property->township_id)->first();
         return view('user.property', compact('property', 'region', 'township'));
+    }
+
+    public function deleteProperty($id)
+    {
+        $property = Property::find($id);
+
+        if (Auth::user()->properties->contains($property)) {
+            $property->delete();
+            $images =  json_decode($property->images);
+            $destinationPath = public_path('/storage/property_image/');
+            foreach ($images as $image) {
+                unlink($destinationPath . $image);
+            }
+        }
+        return redirect('/');
+    }
+
+    public function editPrperty($id)
+    {
+        $property = Property::find($id);
+        $regions = DB::table('regions')->get();
+
+        if (Auth::user()->properties->contains($property)) {
+            return view('user.dashboard.upload_property', compact('property', 'regions'));
+        } else {
+            return back();
+        }
+    }
+
+    public function updateProperty(Request $request, $id)
+    {
+        $property = Property::find($id);
+        $property->update($request->all());
+        return redirect('/my');
+    }
+
+    public function boostProperty($id)
+    {
+        $property = Property::find($id);
+        if ($property->user->id == Auth::id()) {
+            $property->user->point->points = $property->user->point->points - 10;
+            $property->user->point->update();
+            $property->is_boosted = true;
+            $property->boost_exp_date = Carbon::now()->addMonth();
+            $property->update();
+            Alert::success('Boost Success', 'Thanks you, You Post have been listed in Featured.');
+            return back();
+        } else {
+            return back();
+        }
     }
 }

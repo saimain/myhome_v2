@@ -58,7 +58,9 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth:web'], function () {
     // Upload Property
     Route::get('/upload-property', [\App\Http\Controllers\User\PropertyController::class, 'uploadProperty'])->name('upload-property');
     Route::post('/upload-property', [\App\Http\Controllers\User\PropertyController::class, 'postUploadProperty']);
-
+    Route::get('/edit/property/{id}', [\App\Http\Controllers\User\PropertyController::class, 'editPrperty']);
+    Route::post('/update/property/{id}', [\App\Http\Controllers\User\PropertyController::class, 'updateProperty']);
+    Route::post('/boost/property/{id}', [\App\Http\Controllers\User\PropertyController::class, 'boostProperty']);
 
     // Inbox Message
 
@@ -75,6 +77,8 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth:web'], function () {
 
     Route::post('/property/comment/{id}', [\App\Http\Controllers\User\CommentController::class, 'addComment'])->name('addComment');
 
+    Route::post('/property/delete/{id}', [\App\Http\Controllers\User\PropertyController::class, 'deleteProperty'])->name('property.delete');
+
     // Other
 });
 
@@ -87,7 +91,18 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::post('/login', [LoginController::class, 'adminLogin']);
 
     Route::group(['middleware' => 'auth:admin'], function () {
+
+
+
+
         Route::get('/', [\App\Http\Controllers\Admin\DashboardController::class, 'index']);
+
+        // Import
+
+        Route::post('/import/users', [\App\Http\Controllers\Admin\ImportController::class, 'importUsers'])->name('import.users');
+        Route::post('/import/users/point', [\App\Http\Controllers\Admin\ImportController::class, 'importUsersPoint'])->name('import.users.point');
+        Route::post('/import/users/properties', [\App\Http\Controllers\Admin\ImportController::class, 'importUsersProperties'])->name('import.users.properties');
+
 
         // Properties
 
@@ -123,6 +138,11 @@ Route::group(['prefix' => 'dashboard'], function () {
 
         Route::get('/users', [\App\Http\Controllers\Admin\UserController::class, 'viewUser']);
         Route::get('/agents', [\App\Http\Controllers\Admin\AgentController::class, 'viewAgent']);
+
+        // Admin Account
+        Route::get('/admin', [\App\Http\Controllers\Admin\AdminController::class, 'viewAdmin']);
+        Route::post('/admin', [\App\Http\Controllers\Admin\AdminController::class, 'addAdmin'])->name('admin.add');
+        Route::post('/admin/delete/{id}', [\App\Http\Controllers\Admin\AdminController::class, 'deleteAdmin'])->name('admin.delete');
     });
 });
 

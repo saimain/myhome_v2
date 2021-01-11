@@ -40,263 +40,266 @@
             <header id="page-topbar">
                 <div class="navbar-header">
                     <div class="d-flex">
-                        <!-- LOGO -->
+                        {{-- <!-- LOGO -->
                         <div class="navbar-brand-box">
                             <a href="index.html" class="logo logo-dark">
                                 <span class="logo-sm">
                                     <img src="{{ asset('admin-template/assets/images/logo-sm-dark.png')}}" alt=""
-                                        height="20">
-                                </span>
-                                <span class="logo-lg">
-                                    <img src="{{ asset('admin-template/assets/images/logo-dark.png')}}" alt=""
-                                        height="18">
-                                </span>
-                            </a>
+                        height="20">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="{{ asset('admin-template/assets/images/logo-dark.png')}}" alt="" height="18">
+                        </span>
+                        </a>
 
-                            <a href="index.html" class="logo logo-light">
-                                <span class="logo-sm">
-                                    <img src="{{ asset('admin-template/assets/images/logo-sm-dark.png')}}" alt=""
-                                        height="20">
-                                </span>
-                                <span class="logo-lg">
-                                    <img src="{{ asset('admin-template/assets/images/logo-light.png')}}" alt=""
-                                        height="18">
-                                </span>
-                            </a>
-                        </div>
+                        <a href="index.html" class="logo logo-light">
+                            <span class="logo-sm">
+                                <img src="{{ asset('admin-template/assets/images/logo-sm-dark.png')}}" alt=""
+                                    height="20">
+                            </span>
+                            <span class="logo-lg">
+                                <img src="{{ asset('admin-template/assets/images/logo-light.png')}}" alt="" height="18">
+                            </span>
+                        </a>
+                    </div> --}}
 
-                        <button type="button"
-                            class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light"
-                            data-toggle="collapse" data-target="#topnav-menu-content">
-                            <i class="fa fa-fw fa-bars"></i>
-                        </button>
+                    <button type="button"
+                        class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light"
+                        data-toggle="collapse" data-target="#topnav-menu-content">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
 
-                        <div class="topnav">
-                            <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+                    <div class="topnav">
+                        <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
 
-                                <div class="collapse navbar-collapse" id="topnav-menu-content">
-                                    <ul class="navbar-nav">
-
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Property <div class="arrow-down"></div>
-                                            </a>
-                                            <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div>
-                                                            <a href="{{ url('/dashboard/property') }}"
-                                                                class="dropdown-item">View All Properties</a>
-                                                            <a href="{{ url('/dashboard/property/featured') }}"
-                                                                class="dropdown-item">Featured Properties</a>
-                                                            <a href="{{ url('/dashboard/property/agent') }}"
-                                                                class="dropdown-item">Agent Properties</a>
-                                                            <a href="{{ url('/dashboard/property/user') }}"
-                                                                class="dropdown-item">User Properties</a>
-                                                        </div>
+                            <div class="collapse navbar-collapse" id="topnav-menu-content">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a href="{{ url('/dashboard') }}" class="nav-link">Dashboard</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Property <div class="arrow-down"></div>
+                                        </a>
+                                        <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div>
+                                                        <a href="{{ url('/dashboard/property') }}"
+                                                            class="dropdown-item">View All Properties</a>
+                                                        <a href="{{ url('/dashboard/property/featured') }}"
+                                                            class="dropdown-item">Featured Properties</a>
+                                                        <a href="{{ url('/dashboard/property/agent') }}"
+                                                            class="dropdown-item">Agent Properties</a>
+                                                        <a href="{{ url('/dashboard/property/user') }}"
+                                                            class="dropdown-item">User Properties</a>
                                                     </div>
                                                 </div>
-
                                             </div>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Points <div class="arrow-down"></div>
-                                            </a>
 
-                                            <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Points <div class="arrow-down"></div>
+                                        </a>
 
-                                                            <a href="{{ url('/dashboard/point-package') }}"
-                                                                class="dropdown-item">Point
-                                                                Packages</a>
-                                                            <a href="{{ url('/dashboard/point-package/add') }}"
-                                                                class="dropdown-item">Add New Package</a>
-                                                        </div>
+                                        <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div>
+
+                                                        <a href="{{ url('/dashboard/point-package') }}"
+                                                            class="dropdown-item">Point
+                                                            Packages</a>
+                                                        <a href="{{ url('/dashboard/point-package/add') }}"
+                                                            class="dropdown-item">Add New Package</a>
                                                     </div>
                                                 </div>
-
                                             </div>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Orders <div class="arrow-down"></div>
-                                            </a>
 
-                                            <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div>
-                                                            <a href="{{ url('/dashboard/point-order/all') }}"
-                                                                class="dropdown-item">All Orders</a>
-                                                            <a href="{{ url('/dashboard/point-order/success') }}"
-                                                                class="dropdown-item">Success Orders</a>
-                                                            <a href="{{ url('/dashboard/point-order/pending') }}"
-                                                                class="dropdown-item">Pending Orders</a>
-                                                        </div>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Orders <div class="arrow-down"></div>
+                                        </a>
+
+                                        <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div>
+                                                        <a href="{{ url('/dashboard/point-order/all') }}"
+                                                            class="dropdown-item">All Orders</a>
+                                                        <a href="{{ url('/dashboard/point-order/success') }}"
+                                                            class="dropdown-item">Success Orders</a>
+                                                        <a href="{{ url('/dashboard/point-order/pending') }}"
+                                                            class="dropdown-item">Pending Orders</a>
                                                     </div>
                                                 </div>
-
                                             </div>
-                                        </li>
 
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Advertisements <div class="arrow-down"></div>
-                                            </a>
+                                        </div>
+                                    </li>
 
-                                            <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Advertisements <div class="arrow-down"></div>
+                                        </a>
 
-                                                            <a href="{{ url('/dashboard/advertisements') }}"
-                                                                class="dropdown-item">Advertisements</a>
-                                                            <a href="{{ url('/dashboard/advertisements/add') }}"
-                                                                class="dropdown-item">Add New Advertisement</a>
-                                                        </div>
+                                        <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div>
+
+                                                        <a href="{{ url('/dashboard/advertisements') }}"
+                                                            class="dropdown-item">Advertisements</a>
+                                                        <a href="{{ url('/dashboard/advertisements/add') }}"
+                                                            class="dropdown-item">Add New Advertisement</a>
                                                     </div>
                                                 </div>
-
                                             </div>
-                                        </li>
 
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
-                                                role="button" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                User & Agent <div class="arrow-down"></div>
-                                            </a>
-                                            <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div>
-                                                            <a href="{{ url('/dashboard/users') }}"
-                                                                class="dropdown-item">View Users</a>
-                                                            <a href="{{ url('/dashboard/agents') }}"
-                                                                class="dropdown-item">View Agents</a>
-                                                        </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-pages"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            User & Agent <div class="arrow-down"></div>
+                                        </a>
+                                        <div class="dropdown-menu px-2 " aria-labelledby="topnav-pages">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div>
+                                                        <a href="{{ url('/dashboard/users') }}"
+                                                            class="dropdown-item">View Users</a>
+                                                        <a href="{{ url('/dashboard/agents') }}"
+                                                            class="dropdown-item">View Agents</a>
                                                     </div>
                                                 </div>
-
                                             </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
+
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ url('dashboard/admin') }}" class="nav-link">
+                                            Admin Account
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
                     </div>
+                </div>
 
-                    <div class="d-flex">
-                        <div class="dropdown d-inline-block d-lg-none ml-2">
-                            <button type="button" class="btn header-item noti-icon waves-effect"
-                                id="page-header-search-dropdown" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="mdi mdi-magnify"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
-                                aria-labelledby="page-header-search-dropdown">
+                <div class="d-flex">
+                    <div class="dropdown d-inline-block d-lg-none ml-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                            id="page-header-search-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="mdi mdi-magnify"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                            aria-labelledby="page-header-search-dropdown">
 
-                                <form class="p-3">
-                                    <div class="form-group m-0">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search ..."
-                                                aria-label="Recipient's username">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="submit"><i
-                                                        class="mdi mdi-magnify"></i></button>
-                                            </div>
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..."
+                                            aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit"><i
+                                                    class="mdi mdi-magnify"></i></button>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
-                        </div>
-
-
-                        <div class="dropdown d-none d-lg-inline-block ml-1">
-                            <button type="button" class="btn header-item noti-icon waves-effect"
-                                data-toggle="fullscreen">
-                                <i class="mdi mdi-fullscreen"></i>
-                            </button>
-                        </div>
-
-
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user"
-                                    src="{{ asset('admin-template/assets/images/users/avatar-2.jpg')}}"
-                                    alt="Header Avatar">
-                                <span class="d-none d-xl-inline-block ml-1">Patrick</span>
-                                <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <!-- item-->
-                                <a class="dropdown-item" href="#"><i
-                                        class="bx bx-user font-size-16 align-middle mr-1"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i
-                                        class="bx bx-wallet font-size-16 align-middle mr-1"></i> My Wallet</a>
-                                <a class="dropdown-item d-block" href="#"><span
-                                        class="badge badge-success float-right">11</span><i
-                                        class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
-                                <a class="dropdown-item" href="#"><i
-                                        class="bx bx-lock-open font-size-16 align-middle mr-1"></i> Lock screen</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                  document.getElementById('logoutForm').submit();"><i
-                                        class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i>
-                                    Logout</a>
-                            </div>
-                        </div>
-
-                        <form id="logoutForm" action="{{ url('logout') }}" method="POST">
-                            @csrf
-                        </form>
-                    </div>
-                </div>
-            </header>
-
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            <div class="main-content">
-
-                <div class="page-content">
-                    @yield('content')
-                </div>
-                <!-- End Page-content -->
-
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script> © Qovex.
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="text-sm-right d-none d-sm-block">
-                                    Design & Develop by Themesbrand
                                 </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                    <div class="dropdown d-none d-lg-inline-block ml-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+                            <i class="mdi mdi-fullscreen"></i>
+                        </button>
+                    </div>
+
+
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user"
+                                src="{{ asset('admin-template/assets/images/users/avatar-2.jpg')}}" alt="Header Avatar">
+                            <span class="d-none d-xl-inline-block ml-1">Patrick</span>
+                            <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <!-- item-->
+                            <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle mr-1"></i>
+                                Profile</a>
+                            <a class="dropdown-item" href="#"><i
+                                    class="bx bx-wallet font-size-16 align-middle mr-1"></i> My Wallet</a>
+                            <a class="dropdown-item d-block" href="#"><span
+                                    class="badge badge-success float-right">11</span><i
+                                    class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
+                            <a class="dropdown-item" href="#"><i
+                                    class="bx bx-lock-open font-size-16 align-middle mr-1"></i> Lock screen</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                  document.getElementById('logoutForm').submit();"><i
+                                    class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i>
+                                Logout</a>
+                        </div>
+                    </div>
+
+                    <form id="logoutForm" action="{{ url('logout') }}" method="POST">
+                        @csrf
+                    </form>
+                </div>
+        </div>
+        </header>
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                @yield('content')
+            </div>
+            <!-- End Page-content -->
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © Qovex.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-right d-none d-sm-block">
+                                Design & Develop by Themesbrand
                             </div>
                         </div>
                     </div>
-                </footer>
-            </div>
-            <!-- end main content-->
-
+                </div>
+            </footer>
         </div>
-        <!-- END layout-wrapper -->
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
 
     </div>
     <!-- end container-fluid -->

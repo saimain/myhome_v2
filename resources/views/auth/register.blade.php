@@ -72,7 +72,11 @@
                     </div>
                 </div>
             </form>
-            <a href="{{ url('/auth/redirect/facebook') }}">Register with Facebook</a>
+            <div class="text-center mt-4">
+                <a href="{{ url('/auth/redirect/facebook') }}" style="background: #4267B2"
+                    class="btn font-weight-bold text-white">Register
+                    with Facebook</a>
+            </div>
         </div>
         <div class="col-md-3">
 

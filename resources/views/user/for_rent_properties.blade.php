@@ -14,7 +14,7 @@
                 $township = DB::table('townships')->where('region_id',$property->region_id)->first();
                 @endphp
                 <div class="col mb-4">
-                    <div class="card">
+                    <div class="card h-100">
                         @php
                         $image = json_decode($property->images)[0];
                         @endphp
@@ -23,7 +23,7 @@
                         <div class="card-body">
                             <h6 class="card-title">
                                 <a href="{{ url('/property/' . $property->id) }}">
-                                    {{$property->title}}
+                                    {{ Str::limit($property->title, 50) }}
                                 </a>
                             </h6>
                             <span><small>{{$township->township_name}} | {{$region->region_name}}</small></span>

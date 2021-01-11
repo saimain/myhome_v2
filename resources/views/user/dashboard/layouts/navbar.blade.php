@@ -13,6 +13,9 @@
             </span>
             @endif<a class="text-success" href="{{ url('my/buy-point') }}"><u>Buy More</u></a></span>
     </li>
+    <a href="{{ url('my/') }}" class="list-group-item list-group-item-action">
+        <i class="fas fa-angle-right"></i> My Posts
+    </a>
     <a href="{{ url('my/account') }}" class="list-group-item list-group-item-action">
         <i class="fas fa-angle-right"></i> My Account
     </a>

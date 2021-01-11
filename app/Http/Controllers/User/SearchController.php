@@ -12,12 +12,11 @@ class SearchController extends Controller
     public function searchProperty(Request $request)
     {
         if (count($request->all())) {
-            $data = $request->all();
-            $properties = Property::where('title', 'like', '%' . $data[0]['name'])
-                ->orWhere('region_id', $data[1]['region_id'])
-                ->orWhere('township_id', $data[2]['township_id'])
-                ->orWhere('sale_rent', $data[3]['sale_rent'])
-                ->orWhere('type', $data[4]['type'])
+            $properties = Property::where('title', 'like', '%' . $request->name)
+                ->orWhere('region_id', $request->region)
+                ->orWhere('township_id', $request->township)
+                ->orWhere('sale_rent', $request->sale_rent)
+                ->orWhere('type', $request->type)
                 ->get();
             return view('user.search_property', compact('properties'));
         } else {
@@ -27,28 +26,46 @@ class SearchController extends Controller
 
     public function searchPropertyPost(Request $request)
     {
-        $queries = [];
+        $queries = '?';
+
         if ($request->has('name')) {
-            array_push($queries, ['name' => $request->name]);
+            if ($request->name != '') {
+                $queries = $queries . 'name=' . $request->name;
+            }
         }
         if ($request->has('region_id')) {
-            array_push($queries, ['region_id' => $request->region_id]);
+            if ($request->region_id != 'Region') {
+                $queries = $queries . '&region=' . $request->region_id;
+            }
         }
         if ($request->has('township_id')) {
-            array_push($queries, ['township_id' => $request->township_id]);
+            if ($request->township_id != 'Township') {
+                $queries = $queries .   '&township=' . $request->township_id;
+            }
         }
         if ($request->has('sale_rent')) {
-            array_push($queries, ['sale_rent' => $request->sale_rent]);
+            if ($request->sale_rent != 'Sale and Rent') {
+                $queries = $queries .   '&sale_rent=' . $request->sale_rent;
+            }
         }
         if ($request->has('type')) {
-            array_push($queries, ['type' => $request->type]);
+            if ($request->type != 'Type') {
+                $queries = $queries .   '&type=' . $request->type;
+            }
         }
         if ($request->has('price_from')) {
-            array_push($queries, ['price_from' => $request->price_from]);
+            if ($request->price_from != 'Price (From)') {
+                $queries = $queries .   '&price_from=' . $request->price_from;
+            }
         }
         if ($request->has('price_to')) {
-            array_push($queries, ['price_to' => $request->price_to]);
+            if ($request->price_to != 'Price (To)') {
+                $queries = $queries .   '&price_to=' . $request->price_to;
+            }
         }
-        return redirect($request->fullUrlWithQuery($queries));
+
+        $queries = $queries;
+
+        return redirect($request->fullUrl() . $queries);
     }
 }
