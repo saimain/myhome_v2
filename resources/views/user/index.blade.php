@@ -23,7 +23,7 @@ Property</a>
                 @foreach ($boosted_sale_properties as $property)
                 @php
                 $region = DB::table('regions')->where('id',$property->region_id)->first();
-                $township = DB::table('townships')->where('region_id',$property->region_id)->first();
+                $township = DB::table('townships')->where('id',$property->township_id)->first();
                 @endphp
                 <div class="col mb-4">
                     <div class="card">
@@ -51,7 +51,7 @@ Property</a>
                 @foreach ($sale_properties as $property)
                 @php
                 $region = DB::table('regions')->where('id',$property->region_id)->first();
-                $township = DB::table('townships')->where('region_id',$property->region_id)->first();
+                $township = DB::table('townships')->where('id',$property->township_id)->first();
                 @endphp
                 <div class="col mb-4">
                     <div class="card h-100">
@@ -89,7 +89,7 @@ Property</a>
                 @foreach ($boosted_rent_properties as $property)
                 @php
                 $region = DB::table('regions')->where('id',$property->region_id)->first();
-                $township = DB::table('townships')->where('region_id',$property->region_id)->first();
+                $township = DB::table('townships')->where('id',$property->township_id)->first();
                 @endphp
                 <div class="col mb-4">
                     <div class="card h-100">
@@ -119,7 +119,7 @@ Property</a>
                 @foreach ($rent_properties as $property)
                 @php
                 $region = DB::table('regions')->where('id',$property->region_id)->first();
-                $township = DB::table('townships')->where('region_id',$property->region_id)->first();
+                $township = DB::table('townships')->where('id',$property->township_id)->first();
                 @endphp
                 <div class="col mb-4">
                     <div class="card h-100">

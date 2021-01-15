@@ -11,7 +11,7 @@ class SearchController extends Controller
 {
     public function searchProperty(Request $request)
     {
-        if (count($request->all())) {
+        if (count($request->all()) > 0) {
             $properties = Property::where('title', 'like', '%' . $request->name)
                 ->orWhere('region_id', $request->region)
                 ->orWhere('township_id', $request->township)

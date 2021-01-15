@@ -31,9 +31,9 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => '401842574339732',
-        'client_secret' => '1446b1d2b5b8cb5e70b2a74b54a16548',
-        'redirect' => 'https://demo.myhomemm.com/callback/facebook',
+        'client_id' => '898036203994478',
+        'client_secret' => 'ae0c57e6bf7649c14bf72773eb0af567',
+        'redirect' => 'https://myhomemm.com/callback/facebook',
     ],
 
     'recaptcha' => [

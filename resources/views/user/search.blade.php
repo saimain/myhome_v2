@@ -3,7 +3,7 @@ $regions = DB::table('regions')->get();
 @endphp
 
 
-<div class="container search_div py-5">
+<div class="container search_div py-5" style="background-image: url({{ asset('images/assets/background/mrunk.jpg') }})">
     <div class="my-5">
         <div class="container">
             <div class="row">
@@ -82,8 +82,8 @@ $regions = DB::table('regions')->get();
                         </div>
                     </form>
                 </div>
-                <div class="col-md-6 rounded" style="background-color: rgba(0,0,0,0.1);">
-                    <li style="list-style: none; color:gray">
+                <div class="col-md-6 rounded">
+                    <li style="list-style: none; color:white">
                         <a>klj</a>
                     </li>
                 </div>
