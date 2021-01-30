@@ -16,6 +16,13 @@
         </div>
 
         <div class="col-md-9">
+
+            @if (Session::get('success'))
+            <div class="alert alert-success">
+                {{  Session::get('success') }}
+            </div>
+            @endif
+
             @if (Auth::user()->is_agent == false)
             <div class="alert alert-success">
                 You can upgrade your account to agent.<a href="{{ url('/my/account/agent') }}"> <u>Click here</u></a>
@@ -49,8 +56,10 @@
                     </div>
                 </form>
                 <hr>
+                @if (Auth::user()->is_agent == true)
                 <p>Agent Informations</p>
-                <form action="#">
+                <form action="{{ url('my/account/agent/update') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
@@ -93,26 +102,7 @@
                     </div>
                 </form>
                 <hr>
-                <p>Change Password</p>
-                <form action="#">
-                    <div class="form-group row">
-                        <label for="password" class="col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-10">
-                            <input id="password" type="password" class="form-control" name="password" required
-                                autocomplete="new-password">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="password" class="col-sm-2 col-form-label">Confirm Password</label>
-                        <div class="col-sm-10">
-                            <input id="password" type="password" class="form-control" name="password" required
-                                autocomplete="new-password">
-                        </div>
-                    </div>
-                    <div class="text-right">
-                        <button class="btn btn-primary text-white">Change Password</button>
-                    </div>
-                </form>
+                @endif
             </div>
         </div>
     </div>

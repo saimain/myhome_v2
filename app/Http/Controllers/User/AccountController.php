@@ -48,6 +48,20 @@ class AccountController extends Controller
         $user->agent_profile = $image_name;
         $user->update();
 
-        return redirect('/my/account');
+        return redirect('/my/account')->withSuccess('Agent upgrade success. Your account is now Agent.');
+    }
+
+    public function editAgent(Request $request)
+    {
+        $agent = User::find(Auth::id());
+
+        $agent->agent_name = $request->agent_name;
+        $agent->agent_type = $request->agent_type;
+        $agent->agent_phone = $request->agent_phone;
+        $agent->agent_address = $request->agent_address;
+        $agent->agent_about = $request->agent_about;
+
+        $agent->update();
+        return back()->withSuccess('Agent informations updated.');
     }
 }

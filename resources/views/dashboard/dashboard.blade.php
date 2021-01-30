@@ -10,7 +10,7 @@
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Welcome to Qovex Dashboard</li>
+                    <li class="breadcrumb-item active">Welcome to Dashboard</li>
                 </ol>
             </div>
 
@@ -94,6 +94,64 @@
                                     <button type="submit" class="btn btn-sm btn-primary">Submit</button>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h5>Data Analysis</h5>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="border shadow px-3 py-2 mt-3">
+                            <p>Properties</p>
+                            <h2 class="d-inline">{{ \App\Models\Property::count() }}</h2> Posts
+                            <div class="card-footer mt-3">
+                                Last Posted at {{  \App\Models\Property::all()->last()->created_at->diffForHumans() }}.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="border shadow px-3 py-2 mt-3">
+                            <p>Users</p>
+                            <h2 class="d-inline">{{ \App\Models\User::where('is_agent',false)->count() }}</h2> Accounts
+                            <div class="card-footer mt-3">
+                                Last Posted at
+                                {{  \App\Models\User::where('is_agent',false)->get()->last()->created_at->diffForHumans() }}.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="border shadow px-3 py-2 mt-3">
+                            <p>Agents</p>
+                            <h2 class="d-inline">{{ \App\Models\User::where('is_agent',true)->count() }}</h2> Accounts
+                            <div class="card-footer mt-3">
+                                Last Posted at
+                                {{  \App\Models\User::where('is_agent',true)->get()->last()->created_at->diffForHumans() }}.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="border shadow px-3 py-2 mt-3">
+                            <p>Pending Point Orders</p>
+                            <h2 class="d-inline text-danger">
+                                {{ \App\Models\PointOrder::where('is_success',false)->count() }}</h2>
+                            Orders
+                            <div class="card-footer mt-3">
+                                @if (\App\Models\PointOrder::where('is_success',false)->count() > 0)
+                                Last Posted at
+                                {{  \App\Models\PointOrder::where('is_success',false)->get()->last()->created_at->diffForHumans() }}.
+                                @else
+                                No Orders Yet.
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class TermController extends Controller
 {
-    //
+    public function viewTerm()
+    {
+        return view('user.terms');
+    }
 }

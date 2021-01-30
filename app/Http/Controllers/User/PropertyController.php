@@ -13,9 +13,50 @@ use RealRashid\SweetAlert\Facades\Alert;
 class PropertyController extends Controller
 {
 
-    public function viewProperties()
+    public function viewProperties(Property $property)
     {
-        $properties = Property::orderBy('created_at', 'DESC')->paginate(6);
+
+        $property = $property->newQuery();
+        if (app('request')->input('keyword')) {
+            $keyword = app('request')->input('keyword');
+            $property->where('title', 'like', '%' . $keyword . '%');
+        }
+        if (app('request')->input('min_price')) {
+            $min_price = app('request')->input('min_price');
+            $property->where('price', '>=', $min_price);
+        }
+        if (app('request')->input('max_price')) {
+            $max_price = app('request')->input('max_price');
+            $property->where('price', '<=', $max_price);
+        }
+        if (app('request')->input('region')) {
+            $region = app('request')->input('region');
+            $property->where('region_id', $region);
+        }
+        if (app('request')->input('township')) {
+            $township = app('request')->input('township');
+            $property->where('township_id', $township);
+        }
+        if (app('request')->input('min_room')) {
+            $min_room = app('request')->input('min_room');
+            $property->where('bed_room', '>=', $min_room);
+        }
+        if (app('request')->input('max_room')) {
+            $max_room = app('request')->input('max_room');
+            $property->where('bed_room', '<=', $max_room);
+        }
+        if (app('request')->input('sale_or_rent')) {
+            $sale_or_rent = app('request')->input('sale_or_rent');
+            $property->where('sale_rent', $sale_or_rent);
+        }
+        if (app('request')->input('type')) {
+            $type = app('request')->input('type');
+            $property->where('type', $type);
+        }
+
+
+        $properties = $property->orderBy('created_at', 'desc')->paginate(6);
+
         return view('user.properties', compact('properties'));
     }
 
@@ -91,7 +132,7 @@ class PropertyController extends Controller
         $new_property->images = $images;
         $new_property->save();
 
-        return back();
+        return back()->withSuccess('Success! New property posted.');
     }
 
     public function viewProperty($id)

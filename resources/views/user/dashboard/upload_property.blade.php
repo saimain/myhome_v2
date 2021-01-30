@@ -22,6 +22,16 @@
                 Upload Property
                 @endisset
             </p>
+            @if($errors->any())
+            <div class="alert alert-danger">
+                Upload Property Failed. Please check your fills.
+            </div>
+            @endif
+            @if (Session::get('success'))
+            <div class="alert alert-success">
+                {{  Session::get('success') }}
+            </div>
+            @endif
             @isset($property)
             <form action="{{url('/my/update/property/' . $property->id)}}" method="POST" class="mt-3"
                 enctype="multipart/form-data">

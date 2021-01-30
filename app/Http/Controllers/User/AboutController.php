@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    //
+    public function viewAbout()
+    {
+        return view('user.about');
+    }
 }

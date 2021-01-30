@@ -111,6 +111,10 @@
                             <a class="nav-link" href="{{ url('agents') }}"><i class="fas fa-user-friends"></i>
                                 Agents</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('blogs') }}"><i class="fas fa-rss"></i>
+                                Blog</a>
+                        </li>
                         {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ url('construction') }}"><i class="fas fa-users-cog"></i>
                         Construction</a>
@@ -200,11 +204,11 @@
                     <div class="row">
                         <div class="col-md-4">
                             <ul style="list-style: none" class="px-0">
+                                <li><a href="{{ url('guide') }}">User Guide</a></li>
+                                <div class="mt-3"></div>
                                 <li><a href="{{ url('/contact') }}">Contact Us</a></li>
                                 <div class="mt-3"></div>
                                 <li><a href="{{ url('/about') }}">What is MyHome MM</a></li>
-                                <div class="mt-3"></div>
-                                <li><a href="#">Regions in Myanmar</a></li>
                                 <div class="mt-3"></div>
                                 <li><a href="{{ url('term-of-service') }}">Terms of services</a></li>
                                 <div class="mt-3"></div>
@@ -213,9 +217,6 @@
                         </div>
                         <div class="col-md-4">
                             <ul style="list-style: none" class="px-0">
-                                <li><a href="{{ url('guide') }}">User Guide</a></li>
-                                <div class="mt-3"></div>
-                                <hr>
                                 <li>
                                     <form action="#">
                                         <label for="">Get Email for New Property</label>

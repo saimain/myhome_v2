@@ -24,48 +24,60 @@ class SearchController extends Controller
         }
     }
 
-    public function searchPropertyPost(Request $request)
+    public function searchPropertyPost(Request $request, Property $property)
     {
-        $queries = '?';
+        $property = $property->newQuery();
 
-        if ($request->has('name')) {
-            if ($request->name != '') {
-                $queries = $queries . 'name=' . $request->name;
+
+        if ($request->has('keyword') && $request->keyword != '') {
+            $keyword = "?keyword=" . $request->keyword . "&";
+        } else {
+            $keyword = "?";
+        }
+
+        if ($request->has('min_price') && $request->min_price != 'Price (From)') {
+            $min_price = "min_price=" . $request->min_price . "&";
+        } else {
+            $min_price = "";
+        }
+
+
+        if ($request->has('max_price') && $request->min_price != 'Price (From)') {
+            $max_price = "max_price=" . $request->max_price . "&";
+        } else {
+            $max_price = "";
+        }
+
+        if ($request->has('region')) {
+            if ($request->region != 0 && $request->region != 'Region') {
+                $region = "region=" . $request->region . "&";
+            } else {
+                $region = "";
             }
         }
-        if ($request->has('region_id')) {
-            if ($request->region_id != 'Region') {
-                $queries = $queries . '&region=' . $request->region_id;
+
+        if ($request->has('township')) {
+            if ($request->township != 0 && $request->township != 'Township') {
+                $township = "township=" . $request->township . "&";
+            } else {
+                $township = "";
             }
         }
-        if ($request->has('township_id')) {
-            if ($request->township_id != 'Township') {
-                $queries = $queries .   '&township=' . $request->township_id;
-            }
+
+        if ($request->has('sale_or_rent') && $request->sale_or_rent != 'Sale and Rent') {
+            $sale_or_rent = "sale_or_rent=" . $request->sale_or_rent . "&";
+        } else {
+            $sale_or_rent = "";
         }
-        if ($request->has('sale_rent')) {
-            if ($request->sale_rent != 'Sale and Rent') {
-                $queries = $queries .   '&sale_rent=' . $request->sale_rent;
-            }
-        }
+
         if ($request->has('type')) {
             if ($request->type != 'Type') {
-                $queries = $queries .   '&type=' . $request->type;
-            }
-        }
-        if ($request->has('price_from')) {
-            if ($request->price_from != 'Price (From)') {
-                $queries = $queries .   '&price_from=' . $request->price_from;
-            }
-        }
-        if ($request->has('price_to')) {
-            if ($request->price_to != 'Price (To)') {
-                $queries = $queries .   '&price_to=' . $request->price_to;
+                $type = "type=" . $request->type . "&";
+            } else {
+                $type = "";
             }
         }
 
-        $queries = $queries;
-
-        return redirect($request->fullUrl() . $queries);
+        return redirect("/properties" . $keyword . $min_price . $max_price . $region . $township . $sale_or_rent . $type);
     }
 }

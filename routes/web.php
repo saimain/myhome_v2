@@ -39,6 +39,9 @@ Route::get('/guide', [\App\Http\Controllers\User\UserGuideController::class, 'vi
 Route::get('/properties', [\App\Http\Controllers\User\PropertyController::class, 'viewProperties']);
 Route::get('/property/{id}', [\App\Http\Controllers\User\PropertyController::class, 'viewProperty']);
 
+Route::get('/blogs', [\App\Http\Controllers\User\BlogController::class, 'index']);
+Route::get('/blog/{id}', [\App\Http\Controllers\User\BlogController::class, 'show']);
+
 Route::group(['prefix' => 'my', 'middleware' => 'auth:web'], function () {
     Route::get('/', [\App\Http\Controllers\User\DashboardController::class, 'index'])->name('home');
 
@@ -49,6 +52,8 @@ Route::group(['prefix' => 'my', 'middleware' => 'auth:web'], function () {
 
     Route::get('/account/agent', [\App\Http\Controllers\User\AccountController::class, 'upgradeAgentForm']);
     Route::post('/account/agent', [\App\Http\Controllers\User\AccountController::class, 'upgradeAgent']);
+
+    Route::post('/account/agent/update', [\App\Http\Controllers\User\AccountController::class, 'editAgent']);
 
     // Buy Point
     Route::get('/buy-point', [\App\Http\Controllers\User\PointController::class, 'buyPoint'])->name('buy-point');
@@ -138,6 +143,10 @@ Route::group(['prefix' => 'dashboard'], function () {
 
         Route::get('/users', [\App\Http\Controllers\Admin\UserController::class, 'viewUser']);
         Route::get('/agents', [\App\Http\Controllers\Admin\AgentController::class, 'viewAgent']);
+
+        // Blog
+
+        Route::resource('/blog', \App\Http\Controllers\Admin\BlogController::class,  ['as' => 'dashboard']);
 
         // Admin Account
         Route::get('/admin', [\App\Http\Controllers\Admin\AdminController::class, 'viewAdmin']);
